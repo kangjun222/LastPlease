@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+ 
+#wrap{
+	width: 1920px;
+	margin: 0 auto;
+}
+
+body{
+	-ms-overflow-style: none;
+	overflow-x: hidden;
+}
+
+#header{
+	display: flex;
+	justify-content: space-around;
+	width: 1920px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+#header div ul li{
+	display: inline;
+	padding-left: 20px;
+	
+}
+#header div ul{
+	padding-top: 80px;
+}
+
+#banner{
+	width: 1920px;
+	margin: 0 auto;
+}
+
+#logo{
+	width: 200px;
+	height: 200px;
+}
+
+#storelogo{
+	width: 430px;
+	height: 82px;
+	padding-top: 30px;	
+}
+ #goodstext{
+	position: relative;
+	top: 130px;
+	left: 1400px;
+	opacity: 70%;
+} 
+#bannerwrap{
+	background-image:url(../img/color.png);
+	background-repeat:no-repeat;
+	margin: 0 auto;
+	height: 800px;
+	width: 1920px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+}
+
+.slidewrap{	
+	width: 9600px;
+	display: flex;
+	text-align: center;
+	transition: 1s;
+}
+
+.slide{
+	width: 1920px;
+	transition: 3s;
+}
+
+.slide img{
+	width: 1000px;
+	height: 500px;
+	border-radius: 5%;
+
+	
+}
+#left{
+	position: relative;
+	z-index: 5;
+	bottom: 220px;
+	right: 100px;
+	font-size: 80px;
+	opacity: 40%;
+	transition: 1s;
+	cursor: pointer;
+
+}
+#left:hover, #right:hover{
+	transition: 1s;
+	opacity: 100%;
+
+}
+#right{
+	position: relative;
+	z-index: 5;
+	bottom: 220px;
+	left: 1135px;
+	font-size: 80px;
+	opacity: 40%;
+	transition: 1s;
+	cursor: pointer;
+}
+
+#btnwrap{
+	position: relative;
+	left: 830px;
+	bottom: 100px;
+	border-radius: 50px;
+}
+
+.btn{
+	appearance: none;
+	border-radius: 100%;
+	margin-right: 0.1rem;
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+	
+}
+
+
+input[type='radio']:checked {
+	width: 2rem;
+	height: 2rem;
+  border-radius: 100%;
+  margin-right: 0.1rem;
+  background-color: rgba(0, 247, 255, 0.294);
+}
+
+input[type='radio'] {
+	background-color: pink;
+	border: 2px solid rgb(255, 255, 255);
+}
+
+.ebradio{
+	width: 2rem;
+	position: relative;
+	left: 900px;
+	top: 70px;
+}
+
+
+#elbumlogo{
+	text-align: center;
+	padding-top: 50px;
+}
+
+.ebimg{
+	border-radius: 100%;
+	width: 300px;
+	height: 300px;
+	border-left: 2px solid #c3f8a4;
+	border-top: 2px solid #5df542;
+	border-right: 2px solid #42f5f5;
+	border-bottom: 2px solid #42e3f5;
+	transition: all 1.5s ease;
+}
+
+.ebbox1 a img:hover{
+	width: 450px;
+	height: 450px;
+	
+}
+#elbumchart{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ebbox1{
+	padding-top: 70px;
+	padding-left: 100px;
+	padding-right: 100px;
+	
+}
+.font{
+	text-align: center;
+}
+
+#banner2{
+	width: 1920px;
+	margin: 0 auto;
+	overflow: hidden;
+	
+}
+#ebwrap1{
+	align-items: center;
+	transition: 1s;
+}
+
+#allwrap{
+	width: 3840px;
+	display: flex;
+	transition: 1s;
+}
+
+#ebslide{
+	width: 1920px;
+}
+
+#radiodiv{
+	width: 1920px;
+	margin: 0 auto;
+}
+
+#img2{
+	text-align: center;
+	padding-top: 100px;
+}
+#eventlogo{
+	text-align: center;
+	padding-top: 50px;
+}
+#allevwrap{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.evwrap1{
+	padding-top: 90px;
+	padding-left: 50px;
+}
+.evfont{
+	text-align: center;
+	padding-top: 30px;
+}
+.evimg{
+	padding: 20px;
+}
+
+#NewJeans{
+	padding-bottom: 40px;
+}
+#iuconcert{
+	padding-bottom: 20px;
+}

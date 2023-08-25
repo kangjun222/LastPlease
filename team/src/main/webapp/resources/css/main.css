@@ -1,0 +1,388 @@
+@charset "utf-8";
+
+#wrap{
+	width: 1900px;
+	margin: 0 auto;
+}
+body{
+	-ms-overflow-style: none;
+	overflow-x: hidden;
+}
+#header{
+	display: flex;
+	width: 1900px;
+	height: 200px;
+	margin: 0 auto;
+    justify-content: center;
+}
+#logo{
+	width: 350px;
+	height: 200px;
+    text-align: center;
+   
+}
+#headermenu{
+    width: 1570px;
+    height: 200px;
+    text-align: right;
+    padding-right: 70px;
+    padding-top: 50px;
+}
+
+#header div ul li{
+	display: inline;
+	padding-left: 20px;
+	
+}
+#header div ul{
+	padding-top: 80px;
+}
+
+#section{
+    width: 1900px;
+    height: 880px;
+    margin: 0 auto;
+    display: flex;
+    
+}
+#sectionmenu{
+    width: 350px;
+    height: 880px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+#sectionmenu ul li{
+    text-align: center;
+    padding: 30px;
+   
+}
+#banner{
+    width: 1570px;
+    height: 880px;
+    overflow: hidden;
+    
+}
+.slidwrap{
+    width: 23550px;
+    height: 880px;
+    display: flex;
+	text-align: center;
+    animation-name: ani;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    transition: all 1s ;
+   
+}
+.slide{
+    width: 1570px;
+    height: 880px;
+}
+
+
+
+@keyframes ani{
+    0%{
+      transform: translate(0px); 
+    }
+    7.14%{
+        transform: translate(-1570px);
+    }
+    14.28%{
+
+        transform: translate(-3140px);
+          
+    }
+    21.42%{
+        transform: translate(-4710px);    
+    
+    }
+    28.56%{
+        transform: translate(-6280px); 
+    }
+    35.7%{
+        transform: translate(-7850px); 
+    }
+    42.84%{
+        transform: translate(-9420px); 
+    }
+    49.98%{
+        transform: translate(-10990px); 
+    }
+    57.12%{
+        transform: translate(-12560px); 
+    }
+    64.26%{
+        transform: translate(-14130px); 
+    }
+    71.4%{
+        transform: translate(-15700px); 
+    }
+    78.54%{
+        transform: translate(-17270px); 
+    }
+    85.68%{
+        transform: translate(-18840px); 
+    }
+    92.82%{
+        transform: translate(-20410px); 
+    }
+    99.96%{
+        transform: translate(-21980px); 
+    }
+}
+
+#section2{
+    width: 1900px;
+    height: 300px;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+#section2 img{
+    width: 800px;
+    height: 134px;
+    padding-top: 150px;
+}
+#section3{
+    width: 1900px;
+    height: 970px;
+    margin: 0 auto;
+    position: relative;
+
+}
+#s3wrap{
+    width: 1760px;
+    height: 970px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FBFBFB;
+    position: absolute;
+    top: 70px;
+    left: 50px;
+    border-radius: 40px;
+    box-shadow: 8px 12px #BBBBBB;
+    margin: 0 auto;
+    
+}
+#suzy{
+    border: 1px solid black;
+    width: 352px;
+    height: 580px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 45px;  
+}
+  
+#suzywrap{
+    padding-bottom: 100px;
+    padding-left: 40px;
+    
+}
+
+
+#newjeans{
+    border: 1px solid black;
+    width: 352px;
+    height: 580px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 65px;
+    
+}
+#newjeanswrap{
+    padding-top: 170px;
+}
+#leh{
+    border: 1px solid black;
+    width: 352px;
+    height: 580px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 45px;
+}
+#lehwrap{
+    padding-bottom: 100px;
+}
+#ktr{
+    border: 1px solid black;
+    width: 352px;
+    height: 580px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 45px;
+}
+#ktrwrap{
+    padding-top: 170px;
+    padding-right: 40px;
+}
+#section3 img{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border: 1px solid black;
+    width: 350px;
+    height: 460px;
+}
+#section3 img:hover{
+   opacity: 60%;
+
+}
+
+#overviewmenu{
+	display: none;
+}
+
+
+
+}
+ .modal{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+      }
+      
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display:none;
+  width: 100%;
+  height: 100%;
+
+
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal_body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 600px;
+  padding: 40px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  transform: translateX(-50%) translateY(-50%);
+}
+.modal_header {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 440px;
+  height: 100px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.로그인제목{
+position:absolute;
+font-size:18px;
+top:100px;
+right:360px;
+
+
+}
+.아이디{
+position:absolute;
+top:150px;
+width:300px;
+left:100px;
+height:35px;
+}
+.비밀번호{
+position:absolute;
+top:220px;
+width:300px;
+left:100px;
+height:35px;
+
+}
+.로그인버튼{
+ background-color: #000000;
+            
+            color: #FFFFFF;
+position:absolute;
+top:300px;
+width:200px;
+height:40px;
+left:156px;
+border-radius: 20px
+}
+.회원가입버튼{
+ background-color: #FFFFFF;
+            
+            color: #000000;
+position:absolute;
+top:360px;
+width:200px;
+height:40px;
+left:156px;
+border-radius: 20px
+}
+.아이디찾기{
+position:absolute;
+top:420px;
+left:160px;
+font-size:15px;
+}
+.비밀번호찾기{
+position:absolute;
+top:420px;
+left:280px;
+font-size:15px;
+}
+.간편로그인{
+position:absolute;
+top:470px;
+left:220px;
+font-size:15px;
+}
+.가로선1{
+position:absolute;
+top:495px;
+left:320px;
+}
+.가로선2{
+position:absolute;
+top:495px;
+left:90px;
+}
+.카카오톡{
+position:absolute;
+top:525px;
+left:90px;
+}
+.라인{
+position:absolute;
+top:525px;
+left:226px;
+}
+.구글{
+position:absolute;
+top:525px;
+left:362px;
+}
+
+#closebtn{
+	width: 100px;
+	height: 100px;
+}
+
+#closebtnwrap{
+	text-align: right;
+}
