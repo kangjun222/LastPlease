@@ -22,6 +22,10 @@ public class MainController {
 	public String addr() {
 		return "overview2";
 	}
+	@GetMapping("/artistcontrollermain")
+	public String artistcontrollermain() {
+		return "artistmain";
+	}
 	
 	
 	

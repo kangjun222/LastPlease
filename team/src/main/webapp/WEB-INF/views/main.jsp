@@ -60,7 +60,7 @@
                     		</ul>
                     	</div>
                     </li>
-                    <li> <a href="#"><h1><b>ARTIST</h1></b></a> </li>
+                    <li> <a href="${root}maincontroller/artistcontrollermain"><h1><b>ARTIST</h1></b></a> </li>
                     <li> <a href="${root}maincontroller/gostore"><h1><b>STORE</h1></b></a> </li>
                     <li> <a href="#"><h1><b>NEW & NOTICE</h1></b></a> </li>
                 </ul>
