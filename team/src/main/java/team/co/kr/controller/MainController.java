@@ -26,6 +26,14 @@ public class MainController {
 	public String artistcontrollermain() {
 		return "artistmain";
 	}
+	@GetMapping("/guide")
+	public String guide() {
+		return "guide1";
+	}
+	@GetMapping("/guidedo")
+	public String guidedo() {
+		return "guide2";
+	}
 	
 	
 	
