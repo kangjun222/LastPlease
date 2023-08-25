@@ -23,6 +23,21 @@
     				$("#overviewmenu").css("display","none");
     			}  			   		
     	}
+    	
+   
+    
+    </script>
+    
+    <script type="text/javascript">
+ 	function Auditionmenu(){
+		
+		if($("#Auditionmenu").css("display") == "none"){
+			$("#Auditionmenu").css("display","block");
+		}  			
+		else if($("#Auditionmenu").css("display") == 'block'){
+			$("#Auditionmenu").css("display","none");
+		}  			   		
+}
     
     </script>
 </head>
@@ -63,6 +78,10 @@
                     <li> <a href="${root}maincontroller/artistcontrollermain"><h1><b>ARTIST</h1></b></a> </li>
                     <li> <a href="${root}maincontroller/gostore"><h1><b>STORE</h1></b></a> </li>
                     <li> <a href="#"><h1><b>NEW & NOTICE</h1></b></a> </li>
+                    <li> <a href="#"><h1><b>AUDITION</h1></b></a>
+                   
+                    
+                     </li>
                 </ul>
             </div> <!-- sectionmenu -->
 
