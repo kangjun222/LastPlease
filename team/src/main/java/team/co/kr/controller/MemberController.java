@@ -65,6 +65,7 @@ public class MemberController {
 		session.invalidate();
 		model.addAttribute("msg","로그아웃되었습니다");
 		
+		
 		return "main";
 	}
 
