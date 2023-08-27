@@ -8,5 +8,6 @@ import team.co.kr.entity.Member;
 
 @Mapper
 public interface memberMapper {
-	int joinmember(Member member);
+	int joinmember(Member member);	
+	Member loginmember(Member member);
 }

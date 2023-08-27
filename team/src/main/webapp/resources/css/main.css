@@ -227,11 +227,11 @@ body{
 
 }
 
-/* #overviewmenu{
+ #overviewmenu{
 	display: none;
-} */
+} 
  #Auditionmenu{
-	display: block;
+	display: none;
 } 
 
  .modal{

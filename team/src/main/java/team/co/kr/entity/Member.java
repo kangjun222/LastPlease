@@ -1,5 +1,9 @@
 package team.co.kr.entity;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import lombok.Data;
 
 @Data
@@ -20,48 +24,15 @@ public class Member {
 	private String adr;
 	private String adrdetail;
 	
-
 	
-	
-
-	
-
-	public Member(String name, String id, String pwd, String birth, String gender, String email, String phone,
-		String addr, String year, String month, String day, String adr, String adrdetail) {
-		super();
-		this.name = name;
-		this.id = id;
-		this.pwd = pwd;
+	public void makebirth() {
 		this.birth = year+month+day;
-		this.gender = gender;
-		this.email = email;
-		this.phone = phone;
+	}
+	
+	public void makeAddr() {
 		this.addr = adr+" "+adrdetail;
-		this.year = year;
-		this.month = month;
-		this.day = day;
-		this.adr = adr;
-		this.adrdetail = adrdetail;
-		
-		
-	
 	}
-
-	
-public class login{
-	private String idd;
-	private String pwdd;
-	
-	
-	
-	public login(String idd, String pwdd) {
-		this.idd=idd;
-		this.pwdd=pwdd;
-		
-	}
-
-}
-}
+}	
 	
 
 

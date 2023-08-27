@@ -9,11 +9,18 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	<!-- <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.62:1521/xe"/>
 		<property name="username" value="C##TEAM"/>
 		<property name="password" value="TEAM"/>
+	</bean> -->
+	
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521/xe"/>											
+		<property name="username" value="c##himedia"/>
+		<property name="password" value="himedia"/>
 	</bean>
 
 <!-- HikariDataSource(Connection POOL을 만드는 역할을 한다) -->
@@ -27,8 +34,5 @@
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" >
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	
-	
-		
+			
 </beans>

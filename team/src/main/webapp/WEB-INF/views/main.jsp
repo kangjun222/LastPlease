@@ -27,6 +27,12 @@
     			}  	
     			
     	} 
+    	
+    	$(document).ready(function(){
+    		if(${!empty msg}){
+    			alert('${msg}');
+    		}
+    	});
     </script>
 
 
@@ -53,14 +59,34 @@
 		</div>
 		<div id="headermenu">
 			<ul>
-				<li><a href="#" class="modaljun"> <i
-						class="fa-regular fa-user">Login</i>
-				</a></li>
-
-				<li><a href="${root}member/gojoin"> <i
-						class="fa-solid fa-user">Join</i>
-				</a></li>
-
+				<c:if test="${empty mem}">
+					<li>
+						<a href="#" class="modaljun">
+							<i class="fa-regular fa-user">Login</i>
+						</a>
+					</li>
+	
+					<li>
+						<a href="${root}member/gojoin">
+							<i class="fa-solid fa-user">Join</i>
+						</a>
+					</li>
+				</c:if>
+				
+				<c:if test="${!empty mem}">
+					<li>
+						<a href="${root}member/logout" class="modaljun">
+							<i class="fa-regular fa-user">Logout</i>
+						</a>
+					</li>
+	
+					<li>
+						<a href="${root}member/gojoin">
+							<i class="fa-solid fa-user">${mem.id}님</i>
+						</a>
+					</li>
+				</c:if>
+				
 			</ul>
 		</div>
 	</div>
@@ -240,9 +266,9 @@
 				</div>
 
 				<h2 class="로그인제목">LOGIN</h2>
-				<form action="">
-					<input class="아이디" type="text" name="id" placeholder="ID" /> <input
-						class="비밀번호" type="password" name="pwd" placeholder="PASSWORD" />
+				<form method="post" action="${root}member/login">
+					<input class="아이디" type="text" name="id" placeholder="ID" />
+					<input class="비밀번호" type="password" name="pwd" placeholder="PASSWORD" />
 					<input class="로그인버튼" type="submit" id="btn" value="LOGIN">
 				</form>
 

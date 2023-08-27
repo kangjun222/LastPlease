@@ -1,7 +1,10 @@
 package team.co.kr.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,26 +27,48 @@ public class MemberController {
 	@GetMapping("/gojoin")
 	public String gojoin() {
 		return "join";
-	}// 보호가덜된다는것 주소창에 내가쓴게 정보가 입력됨
+	}// 蹂댄샇媛��뜙�맂�떎�뒗寃� 二쇱냼李쎌뿉 �궡媛��벖寃� �젙蹂닿� �엯�젰�맖
 
 	@PostMapping("/join")
 	public String join(Member member) {
-
+		
+		member.makeAddr();
+		member.makebirth();
+		
 		System.out.println(member);
 		int result = memberservice.join(member);
 
-		return "login";
+		return "main";
 	}
 	
 	@PostMapping("/login")
-	public String login(Member login) {
-		System.out.print(login);
-		int result = memberservice.login(login);
+	public String login(Member login , Model model , HttpSession session) {
+		Member result = memberservice.login(login);
+		
+		System.out.println(result);
+		
+		String msg = "";
+		if(result != null) {
+			session.setAttribute("mem",result);
+			msg = "로그인이 완료 되었습니다";
+			model.addAttribute("msg", msg);
+		}
+		else {
+			msg = "로그인 실패";
+			model.addAttribute("msg", msg);
+		}
+		return "main";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session , Model model) {
+		session.invalidate();
+		model.addAttribute("msg","로그아웃되었습니다");
 		
 		return "main";
 	}
 
-	// GETMAPPING 보다 보호가 되서 내가 입력한것이 주소창에 안나옴
+	// GETMAPPING 蹂대떎 蹂댄샇媛� �릺�꽌 �궡媛� �엯�젰�븳寃껋씠 二쇱냼李쎌뿉 �븞�굹�샂
 
 
 }
