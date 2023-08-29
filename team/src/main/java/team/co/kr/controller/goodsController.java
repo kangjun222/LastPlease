@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/Goodscontroller")
-public class goodscontroller {
+public class goodsController {
 
 
 		@GetMapping("/gonewjins")

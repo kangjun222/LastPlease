@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <c:set var="root" value="${pageContext.request.contextPath}/"/>     
@@ -42,7 +42,7 @@
    	
 		</style>
 		<td width="250px" height="880px" ><a ><img class="img0" src="${root }resources/artist/left.png" width="20px" height="880px" align="left" ></a><br />
-				<a class="a1" href="profile.jsp">GONG YOO</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=공유">GONG YOO</a><br /><br /> 
 				<a class="a1" href="#">KIM SEON HO</a><br /><br /> 
 				<a class="a1" href="#">KIM TAE RI</a><br /><br /> 
 				<a class="a1" href="#">LEE DO HYUN</a><br /><br /> 

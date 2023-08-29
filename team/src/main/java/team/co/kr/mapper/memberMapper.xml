@@ -13,11 +13,16 @@
 		#{email},
 		#{phone},
 		#{addr}
-		) 
+		)
 
 	</insert>
-	 <select id="loginmember"  parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Member">
- 		select * from member where id= #{id} and pwd= #{pwd}
- 	</select>
+	
+	<select id="loginmember"
+		parameterType="team.co.kr.entity.Member"
+		resultType="team.co.kr.entity.Member">
+		select * from member where id= #{id} and pwd= #{pwd}
+	</select>
+	
+
 </mapper>
 
