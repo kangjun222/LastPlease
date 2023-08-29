@@ -10,7 +10,7 @@
 </head>
 <body>
 	<table width="1920px" height="200px">
-		<td width="200px" ><a href="#"><img
+		<td width="200px" ><a href="${root}"><img
 				src="img/로고입니다.png" alt="logo" width="200" height="200"></a></td>
 		<td width="1720px"  height="200px"align="center"><a href="#"><img
 				src="img/아티스트 로고 1.png" alt="artistlogo" width="430px" height="82px"></a>

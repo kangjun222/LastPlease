@@ -294,7 +294,7 @@ color:#b9f6ca;
 }
 </style>
 <img position="relative" src="${root }resources/seventeen/세븐틴배경.png" alt="세븐틴배경" position="relative" width="1920px" height="1080px">
-		<td width="200px"><a href="#"><img class="imglogo"src="${root }resources/newjins/로고투명.png"
+		<td width="200px"><a href="${root}"><img class="imglogo"src="${root }resources/newjins/로고투명.png"
 				alt="logo" width="200" height="200"></a></td>
 		<td width="1720px" height="200px" align="center"><a href="#"><img
 				src="${root }resources/newjins/shop.png"  class="img2"alt="shoplogo" width="440px"

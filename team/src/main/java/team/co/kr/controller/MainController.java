@@ -34,8 +34,10 @@ public class MainController {
 	public String guidedo() {
 		return "guide2";
 	}
-	
-	
-	
+	@GetMapping("/ceo")
+	public String ceo() {
+		return "ceo1";
+	}
+
 
 }

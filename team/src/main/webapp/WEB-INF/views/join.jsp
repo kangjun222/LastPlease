@@ -22,7 +22,7 @@
     <div id="wrap">
                 <div id="container">
                     <header>
-                        <a href="#" class="logo">
+                        <a href="${root}" class="logo">
                             <img src="${root}resources/img/logo.png">
                         </a>
                         <h2 class="logo_txt">JOIN US</h2>
