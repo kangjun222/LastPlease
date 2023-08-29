@@ -111,7 +111,7 @@
 				<div id="Auditionmenu">
 						<ul>
 							<li><a href="${root}maincontroller/guide">지원안내</a></li>
-							<li><a href="ceo">지원하기</a></li>
+							<li><a href="${root}maincontroller/guidedo">지원하기</a></li>
 						</ul>
 					</div></li>
 				<li><a href="${root}maincontroller/ceo"><h1><b>CEO</h1></b></a></li>
