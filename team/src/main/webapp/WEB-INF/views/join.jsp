@@ -14,6 +14,58 @@
     <script src="../resources/javascript/join.js" charset="utf-8"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
    
+   
+   <script type="text/javascript">
+   		
+   		function checkpwd(){
+   			
+   			
+   			var pwd = $("#pwd").val();
+   			var pwd1 = $("#pwd1").val();
+   			
+   			if(pwd != '' && pwd1!=''){
+   				if(pwd != pwd1){
+   					$("#pwdcheckresult").html("<b>비밀번호가일치하지않습니다.<b>");
+   	   			}
+   				else{
+   					$("#pwdcheckresult").html("");
+   				}
+   			}
+   			
+   			
+   		}
+   		
+   
+   		function checkId(){   			
+   		 			
+   			var id = $("#id").val();
+   			
+   			if(id == ''){
+   				alert('아이디를 입력해주세요');
+   				return false;
+   			}
+   			
+   			$.ajax({
+   				url:"${root}member/checkId",
+   				type:"get",
+   				data:{"id":id},
+   				success: function(data){
+   					if(data == 0){
+   					
+   						$(".id_ok").html("<b style='color:green';>사용가능한 아이디 입니다.</b>");
+   					}
+   					else if(data == 1){
+   						$(".id_ok").html("<b style='color:red'>이미 사용중인 아이디 입니다.</b>");
+   						
+   					}
+   					
+   				},
+   				error:function(){
+   					alert('에러');	
+   				}				
+   			});
+   		}
+   </script>
 </head>
 <body>
 
@@ -39,19 +91,30 @@
                         
                         <!-- <label for="id">아이디</label><br/> -->
                         <label for="address2">아이디</label><br/>
-                        <input type="text" id="id" name="id" oninput="checkId()" placeholder="아이디 입력" /><br/>
-                        <!--id ajax 중복체크  -->
-                        <span class="id_ok" >사용 가능한 아이디입니다.</span>
-						<span class="id_already">이미 존재하는 아이디입니다.</span>
-                        <div><b id="memIdCheck"></b></div>
+                        <input type="text" id="id" name="id" onblur="checkId();" placeholder="아이디 입력" /><br/>
+                		
+                		<div>
+                			<span class="id_ok" ></span>
+                		</div>
+                        
+                      	</br>
                    
                         <label for="pwd">비밀번호</label><br/>
-                        <input type="password" id="pwd" name="pwd" placeholder="숫자, 영문, 특수문자 포함 8자 이상" /><br/>
-                           <b><div id=""></div></b>
+                        <input type="password" id="pwd" name="pwd" onblur="checkpwd();" placeholder="숫자, 영문, 특수문자 포함 8자 이상" /><br/>
+                        
+                        
                         
                         
                         <label for="pwd1">비밀번호 확인</label><br/>
-                        <input type="pwd1" id="pwd1"  placeholder="숫자, 영문, 특수문자 포함 8자 이상" /><br/><div><b id="pwdcheckresult"></b></div>              
+                        <input type="pwd1" id="pwd1" onblur="checkpwd();"  placeholder="숫자, 영문, 특수문자 포함 8자 이상" />
+                        <br/>
+                       
+                        <div>
+                        	  <b id="pwdcheckresult"></b>
+                        </div>
+                      
+                        
+                                    
                         
                         <label for="birth">생년월일</label>
                         <div id="birthwrap">
@@ -100,9 +163,38 @@
                         </select>
         
                         <select name="day" id="dayselect">
-                            
-                        </select>
-                        
+                           <option value='01'>1일</option>
+					       <option value='02'>2일</option>
+					       <option value='03'>3일</option>
+					       <option value='04'>4일</option>
+					       <option value='05'>5일</option>
+					       <option value='06'>6일</option>
+					       <option value='07'>7일</option>
+					       <option value='08'>8일</option>
+					       <option value='09'>9일</option>
+					       <option value='10'>10일</option>
+					       <option value='11'>11일</option>
+					       <option value='12'>12일</option>
+					       <option value='13'>13일</option>
+					       <option value='14'>14일</option>
+					       <option value='15'>15일</option>
+					       <option value='16'>16일</option>
+					       <option value='17'>17일</option>
+					       <option value='18'>18일</option>
+					       <option value='19'>19일</option>
+					       <option value='20'>20일</option>
+					       <option value='21'>21일</option>
+					       <option value='22'>22일</option>
+					       <option value='23'>23일</option>
+					       <option value='24'>24일</option>
+					       <option value='25'>25일</option>
+					       <option value='26'>26일</option>
+					       <option value='27'>27일</option>
+					       <option value='28'>28일</option>
+					       <option value='29'>29일</option>
+					       <option value='30'>30일</option>
+					       <option value='31'>31일</option>                       
+        				 </select>                 
                         </div>
                     </br>
                         <label for="gender">성별</label><br/>

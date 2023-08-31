@@ -24,6 +24,10 @@ public class memberService {
 		
 		return  result;
 	}
+	
+	public int checkId(Member member) {
+		return membermapper.checkId(member);
+	}
 
 	
 

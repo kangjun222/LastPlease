@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import team.co.kr.entity.Member;
 import team.co.kr.service.memberService;
@@ -64,12 +65,17 @@ public class MemberController {
 	public String logout(HttpSession session , Model model) {
 		session.invalidate();
 		model.addAttribute("msg","로그아웃되었습니다");
-		
-		
+				
 		return "main";
 	}
 
 	// GETMAPPING 蹂대떎 蹂댄샇媛� �릺�꽌 �궡媛� �엯�젰�븳寃껋씠 二쇱냼李쎌뿉 �븞�굹�샂
-
+	
+	@ResponseBody
+	@GetMapping("/checkId")
+	public int checkId(Member member) {
+		
+		return memberservice.checkId(member);
+	}
 
 }

@@ -21,17 +21,41 @@
                 <img id="storelogo" src="${root}resources/img/store1.png" alt="스토어이미지"/>
                 <div>
                     <ul>
-                        <li>
-                            <a href="#">
-                            <i class="fa-regular fa-user"> Login</i> 
-                           <!--  -->
-                            </a>
-                        </li>
-                        
-                        <li>
-                            <a href="#"><i class="fa-solid fa-cart-shopping"> Mypage</i></a>
-                        </li>
-
+                    	<c:if test="${empty mem }">
+	                        <li>
+	                            <a href="#">
+	                            <i class="fa-regular fa-user">Login</i> 
+	                           <!--  -->
+	                            </a>
+	                        </li>
+	                        
+	                        <li>
+	                            <a href="#"><i class="fa-solid fa-cart-shopping">Belogin</i></a>
+	                        </li>
+						</c:if>
+						
+						<c:if test="${!empty mem}">
+							<li>
+								<a href="${root}member/logout" class="modaljun">
+									<i class="fa-regular fa-user">Logout</i>
+								</a>
+							</li>
+			
+							<li>
+								<a href="${root}member/gojoin">
+									<i class="fa-solid fa-user">${mem.id}님</i>
+								</a>
+							</li>
+							
+							<li>
+								<a href="${root}member/gojoin">
+									<i class="fa-solid fa-user">Mypage</i>
+								</a>
+							</li>
+						</c:if>
+						
+						
+					</li>
                     </ul>    
                 </div>    
             </div>  

@@ -10,4 +10,6 @@ import team.co.kr.entity.Member;
 public interface memberMapper {
 	int joinmember(Member member);	
 	Member loginmember(Member member);
+	int checkId(Member member);
+	
 }

@@ -71,6 +71,8 @@
 							<i class="fa-solid fa-user">Join</i>
 						</a>
 					</li>
+					
+					
 				</c:if>
 				
 				<c:if test="${!empty mem}">
@@ -83,6 +85,12 @@
 					<li>
 						<a href="${root}member/gojoin">
 							<i class="fa-solid fa-user">${mem.id}님</i>
+						</a>
+					</li>
+					
+					<li>
+						<a href="${root}member/gojoin">
+							<i class="fa-solid fa-user">Mypage</i>
 						</a>
 					</li>
 				</c:if>
