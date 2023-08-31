@@ -2,6 +2,7 @@
 #wrap{
 	width: 1920px;
 	margin: 0 auto;
+/* 	height: 1800px; */
 }
 
 body{
@@ -33,15 +34,16 @@ body{
 #header div ul{
 	padding-top: 80px;
 }
-#bannerwrap1{
+/* #bannerwrap1{
     width: 1920px;
     height: 680px;
     margin: 0 auto;
    	
-}
+} */
 
 #map{
-	
+	width:1920px;
+	height: 600px;
 }
 #text{
     width: 1920px;
@@ -54,4 +56,11 @@ body{
 #text ul li{
     display: inline;
     padding: 15px;
+}
+#bannerwrap2{
+    width: 1920px;
+    height: 680px;
+    margin: 0 auto;
+    background-color:red;
+   	
 }

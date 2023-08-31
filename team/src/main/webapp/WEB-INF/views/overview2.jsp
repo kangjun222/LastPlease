@@ -38,17 +38,16 @@
     </div> <!-- header -->
     
 
-    <div id="bannerwrap1">
-   		<div id="map" style="width:1920px;height:700px;"></div>
-    </div>  <!-- bannerwrap1 -->
-
-    <div id="text">
-        <ul>
-            <li><a href="#"><i class="fa-solid fa-map-pin">로드뷰</i></a></li>
-            <li><a href="#"><i class="fa-solid fa-map-pin">길찾기</i></a></li>
-            <li><a href="#"><i class="fa-solid fa-map-pin">지도</i></a></li>
-        </ul>
+    
+   		<div id="map" style="width:100%;height:300px;"></div>
+      <!-- bannerwrap1 -->
+    <div id="bannerwrap2">
+    
+    	
     </div>
+      
+    		
+
 
 </wrap>
 

@@ -29,6 +29,9 @@ public class goodsController {
 		public String akmugoods() {
 			return "akmu";
 		}
+		@GetMapping("/goiteam")
+		public String iteam() {
+			return "iteamreview1";
 
 	}
-
+}

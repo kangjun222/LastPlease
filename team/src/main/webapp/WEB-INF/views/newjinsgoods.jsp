@@ -1,15 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="root" value="${pageContext.request.contextPath}/"/> 
-    
-    
+ <c:set var="root" value="${pageContext.request.contextPath}/"/>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<title>goodsframe</title>
+<title>NEWJEANS GOODS</title>
 <style type="text/css">
 * {
 	text-decoration: none;
@@ -373,9 +371,9 @@ style
 		<td width="1720px" height="200px" align="center"><a href="#"><img
 				src="${root }resources/newjins/shop.png" class="img2" alt="shoplogo" width="440px"
 				height="60px" align="center"></a> <!-- 	<a href="#"><img class="img"src="imgnewgoods/review.png" width="190px" height="20px"></a> -->
-			<a href="#" class="but" data-text="충전하기">충전하기</a> <a href="#"
-			class="but1" data-text="잔액조회">잔액조회</a> <a href="#" class="but2"
-			data-text="ITEM REVIEW">ITEM REVIEW</a> <!--   <a href="#" class="but2" data-text="ITEM REVIEW">ITEM REVIEW</a> -->
+			<a href="#" class="but" data-text="충전하기">충전하기</a> 
+			<a href="#" class="but1" data-text="잔액조회">잔액조회</a> 
+			<a href="${root}Goodscontroller/goiteam" class="but2" data-text="ITEM REVIEW">ITEM REVIEW</a> <!--   <a href="#" class="but2" data-text="ITEM REVIEW">ITEM REVIEW</a> -->
 			<!-- <button class="but" onclick="location.href='index.html'">충전하기</button>
 			<button class="but1" onclick="location.href='index.html'">잔액조회</button> -->
 			<!--  <button type="button" onclick="location.href='list'">목록</button>-->

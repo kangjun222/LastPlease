@@ -37,8 +37,12 @@
                         <label for="name">이름</label><br/>
                         <input type="text" id="name" name="name" placeholder="이름 입력" /><br/>
                         
-                        <label for="id">아이디</label><br/>
-                        <input type="text" id="id" name="id" placeholder="아이디 입력" /><br/>
+                        <!-- <label for="id">아이디</label><br/> -->
+                        <label for="address2">아이디</label><br/>
+                        <input type="text" id="id" name="id" oninput="checkId()" placeholder="아이디 입력" /><br/>
+                        <!--id ajax 중복체크  -->
+                        <span class="id_ok" >사용 가능한 아이디입니다.</span>
+						<span class="id_already">이미 존재하는 아이디입니다.</span>
                         <div><b id="memIdCheck"></b></div>
                    
                         <label for="pwd">비밀번호</label><br/>
@@ -148,6 +152,8 @@ function findAddr(){
         }
     }).open();
 }
+
+
 </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
