@@ -43,21 +43,21 @@
 		</style>
 		<td width="250px" height="880px" ><a ><img class="img0" src="${root }resources/artist/left.png" width="20px" height="880px" align="left" ></a><br />
 				<a class="a1" href="${root}artist/profile?name=공유">GONG YOO</a><br /><br /> 
-				<a class="a1" href="#">KIM SEON HO</a><br /><br /> 
-				<a class="a1" href="#">KIM TAE RI</a><br /><br /> 
-				<a class="a1" href="#">LEE DO HYUN</a><br /><br /> 
-				<a class="a1" href="#">HAN SO HEE</a><br /><br /> 
-				<a class="a1" href="#">IU</a><br /><br /> 
-				<a class="a1" href="#">YOO SEUNG HO</a><br /><br /> 
-				<a class="a1" href="#">BAE SUZY</a><br /><br /> 
-				<a class="a1" href="#">CHUN WOO HEE</a><br /><br /> 
-				<a class="a1" href="#">JOO WOO JAE</a><br /><br /> 
-				<a class="a1" href="#">GIRI BOY</a><br /><br /> 
-				<a class="a1" href="#">MELO MANGCE</a><br /><br /> 
-				<a class="a1" href="#">KARINA</a><br /><br /> 
-				<a class="a1" href="#">AKDONG MUSICIAN</a><br /><br /> 
-				<a class="a1" href="#">SEVENTEEN</a><br /><br /> 
-				<a class="a1" href="#">NEW JEANS</a><br />
+				<a class="a1" href="${root}artist/profile?name=김선호">KIM SEON HO</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=김태리">KIM TAE RI</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=이도현">LEE DO HYUN</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=한소희">HAN SO HEE</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=이지은">IU</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=유승호">YOO SEUNG HO</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=배수지">BAE SUZY</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=천우희">CHUN WOO HEE</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=주우재">JOO WOO JAE</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=기리보이">GIRI BOY</a><br /><br /> 
+				<a class="a1" href="${root}artist/gprofile?groupname=멜로망스">MELO MANGCE</a><br /><br /> 
+				<a class="a1" href="${root}artist/profile?name=카리나">KARINA</a><br /><br /> 
+				<a class="a1" href="${root}artist/gprofile?groupname=악동뮤지션">AKDONG MUSICIAN</a><br /><br /> 
+				<a class="a1" href="${root}artist/gprofile?groupname=세븐틴">SEVENTEEN</a><br /><br /> 
+				<a class="a1" href="${root}artist/gprofile?groupname=뉴진스">NEW JEANS</a><br />
 		</td>
 	<td  width="1670px" height="880px">
 	<style type="text/css">
@@ -78,7 +78,7 @@
    		}
    		
 	</style>
-		<a href="profile.jsp"><img src="${root }resources/artist/공유사진.png" width="250px" height="250px" ></a>
+		<a href="#"><img src="${root }resources/artist/공유사진.png" width="250px" height="250px" ></a>
 		<a href="#"><img src="${root }resources/artist/김선호사진.png" width="250px" height="250px"></a>
 		<a href="#"><img src="${root }resources/artist/김태리사진.png" width="250px" height="250px"></a>
 		<a href="#"><img src="${root }resources/artist/이도현 사진.png" width="250px"height="250px" ></a>

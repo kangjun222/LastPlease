@@ -3,13 +3,13 @@ package team.co.kr.entity;
 import lombok.Data;
 
 @Data
-public class Artist {
+public class GroupArtist {
 	private int idx;
-	private String name;
+	private String groupname;
 	private String ename;
-	private String birth;
-	private String height;
-	private String debut;
+	private String debutbirth;
+	private String gmember;
+	private String debutsong;
 	private String job;
 	private String profile;
 	private String works;

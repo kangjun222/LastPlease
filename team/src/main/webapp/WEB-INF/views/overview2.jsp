@@ -38,18 +38,17 @@
     </div> <!-- header -->
     
 
-    
-   		<div id="map" style="width:100%;height:300px;"></div>
-      <!-- bannerwrap1 -->
-    <div id="bannerwrap2">
-    
-    	
-    </div>
-      
-    		
+    <div id="bannerwrap1">
+   		<div id="map" style="width:1920px;height:700px;"></div>
+    </div>  <!-- bannerwrap1 -->
+
+  
+  <div id="bannerwrap2">
+    	<img src="${root}resources/img/overviewadd.png" alt="지도이미지" / width="1211px"
+				height="660px">
+  </div>
 
 
-</wrap>
 
 	<script>
 	var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
@@ -60,5 +59,7 @@
 
 	var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 	</script>
+	 
+	</wrap>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공유</title>
+<title>groupartist</title>
 </head>
 <body>
 	<table width="1920px" height="200px">
@@ -29,21 +29,21 @@
    			position:relative;
    		}
    		p{
-   			font-size:20px;
-   			margin-bottom:2px;
-   			font-weight:normal;
+   			
+   			margin-bottom:5px;
+   			
    		}
    		strong{
    			font-weight:bold;
-   			font-size:30px;
+   			font-size:25px;
    			color:#3e2723 ;
    		}
    		h1{
-   			font-size:40px;
+   			font-size:30px;
    		
    		}
    		span{
-   			font-size:35px;
+   			font-size:25px;
    			color: #9e9e9e ;
    		}
    		
@@ -64,24 +64,24 @@
    		}
    	</style>
    	<td width="900px" height="880px" >
-   	<h1>${artist.name} <span>${artist.ename}</span> </h1>
-   	<Br>
-   	<h2>${artist.birth}</h2>
-   	<p>키	${artist.height}cm</p>
-   	<p>데뷔  ${artist.debut}</p></br>
+   	<h1>${groupartist.groupname}&nbsp&nbsp<span>${groupartist.ename}</span> </h1>
+   	
+   	<h2>${groupartist.debutbirth}</h2>
+   	<p>멤버 ${groupartist.gmember}</p>
+   	<p>데뷔곡 ${groupartist.debutsong}</p></br>
    	<strong>WORKS</strong></br></br>
-   	<p class="font">작품</p></br>
+   	<p class="font">앨범</p>
 	<p>
-	${artist.works}
+	${groupartist.works}
 	</p>
 	<br>
-	<p class="font">수상내역</p><br>
-	<p>${artist.carrer}</p>
+	<p class="font">수상내역</p>
+	<p>${groupartist.carrer}</p>
 	
 	    	
    </td>
    <td width="820px" height="880px" align="center">
-   		 <img class="img2" src="${root}resources/profileimg/${artist.profile}" width="600px"  height="750px">
+   		 <img class="img2" src="${root}resources/profileimg/${groupartist.profile}" width="600px"  height="750px">
    	</td>
    	<td width="120px" height="880px" >
    		<img class="img" src="${root}resources/artist/right.png" width="20px" height="300px" >
@@ -118,18 +118,18 @@
 		}
 	
 		span{
-			font-size: 10px;
+			font-size: 30px;
 			color: 120202;
 			font-weight:bold;
 		}
 		.font{
-			font-size:30px;
+			font-size:25px;
 			font-weight:bold;
 		}
 		
 	</style>
 	<div class="wrap">
-		<img src="img/footer.png" alt=""/>
+		<img src="#" alt=""/>
 		<div class="wrapimg">
 
 			<a href="#"><img src="${root}resources/artist/페이스북.png" alt="" width="20px" height="20px"/></a>

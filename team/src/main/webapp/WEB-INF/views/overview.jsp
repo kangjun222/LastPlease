@@ -67,7 +67,7 @@
         <div id="banner3wrap">
             <div id="banner3">
                 <span><b>회사명 : H ENTERTAINMENT<br>
-                    설립일 : 2023-07-26<br>
+                    설립일 : 2023-07-26<br>;
                     대표이사 : 김사희 , 강준형, 정하영<br>
                     주    소 : 서울 구로구 경인로 557<br>
                     주요사업 : 연예,매니지먼트제작
@@ -76,7 +76,7 @@
 
             </div> <!-- banner3 -->
         </div> <!-- banner3wrap -->
-
+	
 
     </wrap>
 </body>
