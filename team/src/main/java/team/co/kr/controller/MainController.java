@@ -38,6 +38,10 @@ public class MainController {
 	public String ceo() {
 		return "ceo1";
 	}
+	@GetMapping("/idfind")
+	public String idfind() {
+		return "findidpw";
+	}
 
 
 }

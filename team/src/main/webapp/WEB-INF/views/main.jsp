@@ -282,7 +282,7 @@
 				</form>
 
 				<a href="#"><input class="회원가입버튼" type="button" value="회원가입"></a>
-				<a href="#"><b class="아이디찾기">아이디찾기</b></a> <a href="#"><b
+				<a href="${root}maincontroller/idfind"><b class="아이디찾기">아이디찾기</b></a> <a href="${root}maincontroller/idfind"><b
 					class="비밀번호찾기">비밀번호찾기</b></a>
 				<h5 class="간편로그인">
 					<b>간편로그인<b>
