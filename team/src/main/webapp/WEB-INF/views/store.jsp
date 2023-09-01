@@ -403,8 +403,9 @@
 
 
         </section>
-    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </wrap> 
+    
 </body>
 <script src="${root}resources/javascript/store.js"></script>
 </html>

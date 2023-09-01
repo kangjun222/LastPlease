@@ -17,22 +17,109 @@
    
    <script type="text/javascript">
    		
-   		function checkpwd(){
+   
+   		function checkName(){
+			var blank_pattern = /^\s+|\s+$/g;
+   			var name = $("#name").val();
    			
+   			if(name.replace(blank_pattern, '' ) == "" ){
+   			   $("#namecheck").html("<b>이름을입력해주세요<b>");
+   			   $("#name").focus();
+   			   return false;
+   			}
+   			else{
+   				$("#namecheck").html("");
+   				return true;
+   			}
+   		}
+   
+   		function checkEmail(){
    			
+   			var blank_pattern = /^\s+|\s+$/g;
+   			var email = $("#email").val();
+   			
+   			if(email.replace(blank_pattern, '' ) == "" ){
+    			   $("#emailcheck").html("<b>이메일을입력해주세요<b>");
+    			   $("#email").focus();
+    			   return false;
+    		}
+    		 
+   			
+
+   			const regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+   			
+   			if(!regExp.test(email)){
+   				$("#emailcheck").html("<b style='color:red'>이메일형식이맞지않습니다.</b><br/>");
+   				$("#email").focus();
+   				return false;
+   			}
+   			
+   			else{
+   				$("#emailcheck").html("");
+   				return true;
+   			}
+   			
+   		}	
+   		
+   		
+   		function checkphone(){
+   			var blank_pattern = /^\s+|\s+$/g;
+   			var phone = $("#phone").val();
+   			
+
+   			if(phone.replace(blank_pattern, '' ) == "" ){
+    			   $("#phonecheck").html("<b>전화번호를 입력해 주세요<b>");
+    			   $("#phone").focus();
+    			   return false;
+    		}
+   			
+   			var phoneRule = /^(01[016789]{1})[0-9]{3,4}[0-9]{4}$/;
+   			if(!phoneRule.test(phone)){
+   				$("#phonecheck").html("<b style='color:red'>전화번호 형식을 확인해주세요</b><br>");
+   				$("#phone").focus();
+   				return false;
+   			}
+   			else{
+   				$("#phonecheck").html("");
+   				return true;
+   			}
+   		}
+   
+ 
+   		
+   		function checkpwd(){  			
    			var pwd = $("#pwd").val();
    			var pwd1 = $("#pwd1").val();
    			
-   			if(pwd != '' && pwd1!=''){
-   				if(pwd != pwd1){
-   					$("#pwdcheckresult").html("<b>비밀번호가일치하지않습니다.<b>");
-   	   			}
-   				else{
-   					$("#pwdcheckresult").html("");
-   				}
-   			}
+   			/* var blank_pattern = /^\s+|\s+$/g;
+  
+   			if(pwd.replace(blank_pattern, '' ) == "" ){
+    			   $("#pwdcheckresult1").html("<b>비밀번호를입력해주세요<b>");
+    			   return;
+    			} */
    			
+    		if(pwd == ''){
+    			$("#pwdcheckresult1").html("비밀번호를 입력해주세요");
+    			return false;
+    		}	
+    		
+    		else{
+    			$("#pwdcheckresult1").html("");
+    			if(pwd != '' && pwd1!=''){
+       				if(pwd != pwd1){
+       					$("#pwdcheckresult").html("<b style='color:red'>비밀번호가일치하지않습니다.</b>");
+       					return false;
+       	   			}
+       				else{
+       					$("#pwdcheckresult").html("");
+       					return true;
+       				}
+       			}
+    		}
+    			
    			
+				
+   			   			
    		}
    		
    
@@ -40,22 +127,32 @@
    		 			
    			var id = $("#id").val();
    			
-   			if(id == ''){
-   				alert('아이디를 입력해주세요');
-   				return false;
+   			var blank_pattern = /^\s+|\s+$/g;
+   			
+   			if(id.replace(blank_pattern, '' ) == "" ){
+   			   $(".id_ok").html("<b>아이디를입력해주세요<b>");
+   			   $("#id").focus();
+   			   return false;
    			}
+   			else{
+   			 $(".id_ok").html("");
+   			 	return true;
+   			}
+   			
    			
    			$.ajax({
    				url:"${root}member/checkId",
    				type:"get",
    				data:{"id":id},
    				success: function(data){
-   					if(data == 0){
-   					
+   					if(data == 0){  					
    						$(".id_ok").html("<b style='color:green';>사용가능한 아이디 입니다.</b>");
+   						return true;
    					}
    					else if(data == 1){
    						$(".id_ok").html("<b style='color:red'>이미 사용중인 아이디 입니다.</b>");
+   						$("#id").focus();
+   						return false;
    						
    					}
    					
@@ -64,6 +161,37 @@
    					alert('에러');	
    				}				
    			});
+   		}
+   		
+   		function submitCheck(){
+   			if(checkName()== true 
+   					&& checkId()== true
+   					&& checkpwd()==true
+   					&& checkEmail()==true 
+   					&& checkphone()==true 
+   					
+   					){
+   				
+   				var member = $("#memberjoin").serialize();
+   				$.ajax({
+   					url:"${root}member/join",
+   					type:"post",
+   					data:member,
+   					dataType:"json",
+   					success:function(result){
+   						location.href='${root}?msg=회원가입이완료되었습니다.'
+   					},
+   					error:function(){
+   						alert("joinerror");
+   					}
+   				});
+   					
+   			}
+   			
+   			else{
+   				alert('회원가입 형식을 다시 확인해주세요');
+   				return false;
+   			}
    		}
    </script>
 </head>
@@ -85,24 +213,27 @@
                     </div>
                
                
-                     <form method="post" action="${root}member/join" >
+                     <form id="memberjoin" method="post" action="${root}member/join" >
                         <label for="name">이름</label><br/>
-                        <input type="text" id="name" name="name" placeholder="이름 입력" /><br/>
-                        
+                        <input type="text" id="name" name="name" placeholder="이름 입력" onblur="checkName();"/><br/>
+                        <div><span id="namecheck"></span></div>
+                        </br>
                         <!-- <label for="id">아이디</label><br/> -->
                         <label for="address2">아이디</label><br/>
                         <input type="text" id="id" name="id" onblur="checkId();" placeholder="아이디 입력" /><br/>
                 		
                 		<div>
-                			<span class="id_ok" ></span>
+                			<span class="id_ok"></span>
                 		</div>
                         
                       	</br>
                    
                         <label for="pwd">비밀번호</label><br/>
                         <input type="password" id="pwd" name="pwd" onblur="checkpwd();" placeholder="숫자, 영문, 특수문자 포함 8자 이상" /><br/>
-                        
-                        
+                        <div>
+                        	  <span id="pwdcheckresult1"></span>
+                        </div>
+                        <br>
                         
                         
                         <label for="pwd1">비밀번호 확인</label><br/>
@@ -200,23 +331,25 @@
                         <label for="gender">성별</label><br/>
                         <div id="genderwrap">
                             <select name="gender" id="gender">
-                                <option value="mail">mail</option>
-                                <option value="femail">cute</option>
+                                <option value="mail">male</option>
+                                <option value="femail">female</option>
                             </select>
                         </div>             
                         
                     </br>
-                        <label for="eamil">이메일</label><br/>
-                        <input type="email" id="email" name="email" placeholder="이메일을입력해주세요" onblur="checksubmit()"/><br/><div><b  id="nicknamecheckresult"></b></div>
-        
+                        <label for="eamil">이메일</label>
+                        <input type="email" id="email" name="email" placeholder="이메일을입력해주세요" onblur="checkEmail();"/><br/><div><b  id="nicknamecheckresult"></b></div>
+        				<div><span id="emailcheck"></span></div>
+        				</br>
                         <label for="phone">핸드폰번호</label><br/>
-                        <input type="text" id="phone" name="phone" placeholder="숫자만 입력해주세요" onblur="checksubmit()"/><br/>
+                        <input type="text" id="phone" name="phone" placeholder="숫자만 입력해주세요" onblur="checkphone();"/><br/>
+                        <div><span id="phonecheck"></span></div>
                         
                         <label for="addr">주소</label><br/>                        
                         <input id="member_post"  type="text" placeholder="Zip Code" readonly onclick="findAddr()">
 						<input id="member_addr" name="adr" type="text" placeholder="Address" readonly> <br>
 						<input type="text" name="adrdetail" placeholder="Detailed Address">
-                        <button type="submit" class ="btn_join">회원가입</button>
+                        <button type="button" onclick="submitCheck();" class ="btn_join">회원가입</button>
                         
                         
                      </form>

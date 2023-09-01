@@ -29,17 +29,18 @@ public class MemberController {
 	public String gojoin() {
 		return "join";
 	}// 蹂댄샇媛��뜙�맂�떎�뒗寃� 二쇱냼李쎌뿉 �궡媛��벖寃� �젙蹂닿� �엯�젰�맖
-
+	
+	@ResponseBody
 	@PostMapping("/join")
-	public String join(Member member) {
+	public int join(Member member) {
 		
 		member.makeAddr();
 		member.makebirth();
 		
 		System.out.println(member);
 		int result = memberservice.join(member);
-
-		return "main";
+		
+		return result;
 	}
 	
 	@PostMapping("/login")

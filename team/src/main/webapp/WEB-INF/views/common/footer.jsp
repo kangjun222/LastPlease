@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <c:set var="root" value="${pageContext.request.contextPath}/"/>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,12 +44,12 @@
 		
 	</style>
 	<div class="wrap">
-		<img src="${root }resources/artist/footer.png" alt=""/>
+		<img src="${root}resources/artist/footer.png" alt=""/>
 		<div class="wrapimg">
 
-			<a href="#"><img src="${root }resources/artist/페이스북.png" alt="" width="20px" height="20px"/></a>
-			<a href="#"><img src="${root }resources/artist/인스타.png" alt=""width="20px"height="20px"/></a>
-			<a href="#"><img src="${root }resources/artist/트위터.png" alt=""width="20px"height="20px"/></a>
+			<a href="#"><img src="${root}resources/artist/페이스북.png" alt="" width="20px" height="20px"/></a>
+			<a href="#"><img src="${root}resources/artist/인스타.png" alt=""width="20px"height="20px"/></a>
+			<a href="#"><img src="${root}resources/artist/트위터.png" alt=""width="20px"height="20px"/></a>
 		</div>
 		<div class="wraptext">
 			<a class="a2" href="javascript:void(0);"onclick="window.open('http://localhost:8081/TeamPro/sahee/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4.jsp', 'pop01', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');">개인정보처리방침</a>
