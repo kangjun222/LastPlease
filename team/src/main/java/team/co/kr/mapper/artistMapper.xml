@@ -4,9 +4,15 @@
 	<select id="profile" parameterType="team.co.kr.entity.Artist"  resultType="team.co.kr.entity.Artist">
 		select * from artist where name=#{name}
 	</select>
+	
 	<select id="groupprofile" parameterType="team.co.kr.entity.GroupArtist"  resultType="team.co.kr.entity.GroupArtist">
 		select * from groupartist where groupname=#{groupname}
 	</select>
+	
+	<select id="gonewjins" parameterType="string" resultType="team.co.kr.entity.Item">
+		select * from item where itemartist=#{data}
+	</select>
+	
 </mapper>
 
 

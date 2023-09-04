@@ -47,11 +47,6 @@
 								</a>
 							</li>
 							
-							<li>
-								<a href="${root}member/gojoin">
-									<i class="fa-solid fa-user">Mypage</i>
-								</a>
-							</li>
 						</c:if>
 						
 						
@@ -68,31 +63,31 @@
                     <div class="slide" id="slide1">
                         <label for="button5"><i id="left" class="fa-solid fa-angle-left" ></i></label>
                         <label for="button2"><i id="right" class="fa-solid fa-angle-right"></i></label>
-   						<a href="${root}Goodscontroller/gonewjins"><img src="${root}resources/img/newjeans.png" alt="뉴진스앨범"/></a>                    </div>
+   						<a href="${root}Goodscontroller/gonewjins?artist=뉴진스"><img src="${root}resources/img/newjeans.png" alt="뉴진스앨범"/></a>                    </div>
 
                     <div class="slide" id="slide2" style="opacity: 0.5;">
                         <label for="button1"><i id="left" class="fa-solid fa-angle-left" ></i></label>
                         <label for="button3"><i id="right" class="fa-solid fa-angle-right"></i></label>
-                        <a href="${root}Goodscontroller/goiu"><img src="${root}resources/img/iu.png" alt="아이유앨범"></a>
+                        <a href="${root}Goodscontroller/goiu?artist=아이유"><img src="${root}resources/img/iu.png" alt="아이유앨범"></a>
                      
                     </div>
 
                     <div class="slide" id="slide3"  style="opacity: 0.5;">
                         <label for="button2"><i id="left" class="fa-solid fa-angle-left" ></i></label>
                         <label for="button4"><i id="right" class="fa-solid fa-angle-right"></i></label>
-                        <a href="${root}Goodscontroller/goseventeen"><img src="${root}resources/img/st.png" alt="세븐틴앨범"/></a>
+                        <a href="${root}Goodscontroller/goseventeen?artist=세븐틴"><img src="${root}resources/img/st.png" alt="세븐틴앨범"/></a>
                     </div>
 
                     <div class="slide" id="slide4" style="opacity: 0.5;">
                         <label for="button3"><i id="left" class="fa-solid fa-angle-left" ></i></label>
                         <label for="button5"><i id="right" class="fa-solid fa-angle-right"></i></label>
-                        <a href="${root}Goodscontroller/gokarina"><img src="${root}resources/img/karina.png" alt="카리나앨범"/></a>
+                        <a href="${root}Goodscontroller/gokarina?artist=카리나"><img src="${root}resources/img/karina.png" alt="카리나앨범"/></a>
                     </div>
 
                     <div class="slide" id="slide5" style="opacity: 0.5;">
                         <label for="button4"><i id="left" class="fa-solid fa-angle-left" ></i></label>
                          <label for="button1"><i id="right" class="fa-solid fa-angle-right"></i></label>
-                         <a href="${root}Goodscontroller/goakmu"> <img src="${root}resources/img/akmualbum.png" alt="악뮤엘범"/></a>
+                         <a href="${root}Goodscontroller/goakmu?artist=악뮤"> <img src="${root}resources/img/akmualbum.png" alt="악뮤엘범"/></a>
                          
                     </div>
                     

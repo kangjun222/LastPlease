@@ -75,7 +75,7 @@
 					
 				</c:if>
 				
-				<c:if test="${!empty mem}">
+				<c:if test="${!empty mem}">							
 					<li>
 						<a href="${root}member/logout" class="modaljun">
 							<i class="fa-regular fa-user">Logout</i>
@@ -88,12 +88,24 @@
 						</a>
 					</li>
 					
-					<li>
-						<a href="${root}member/gojoin">
-							<i class="fa-solid fa-user">Mypage</i>
-						</a>
-					</li>
+					<c:if test="${mem.id eq 'master'}">					
+						<li>
+							<a href="${root}item/addItemForm">
+								<i class="fa-solid fa-user">addItem</i>
+							</a>
+						</li>
+					</c:if>
+					
+					<c:if test="${mem.id ne 'master'}">
+						<li>
+							<a href="${root}member/gojoin">
+								<i class="fa-solid fa-user">Mypage</i>
+							</a>
+						</li>
+					</c:if>
 				</c:if>
+				
+				
 				
 			</ul>
 		</div>
