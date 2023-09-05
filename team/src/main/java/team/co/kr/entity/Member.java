@@ -25,6 +25,8 @@ public class Member {
 	private String adr;
 	private String adrdetail;
 	
+	private int bank;
+	
 	
 	public void makebirth() {
 		this.birth = year+month+day;

@@ -39,7 +39,7 @@
             
            <div>
             <h1>ITEM REVIEW</h1>
-            <button id="button">충전하기</button>
+            <a href="${root}/bankcontroller/bankform" class="but" data-text="충전하기">충전하기</a>
             <button  id="button">잔액조회</button>
         
            </div>

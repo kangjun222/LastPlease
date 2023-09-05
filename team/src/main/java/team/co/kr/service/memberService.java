@@ -28,6 +28,9 @@ public class memberService {
 	public int checkId(Member member) {
 		return membermapper.checkId(member);
 	}
+	public int bank(Member member) {
+		return membermapper.bank(member);	
+	}
 
 	
 

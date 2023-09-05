@@ -27,5 +27,17 @@
 		select count(*) from member
 		where id=#{id}
 	</select>
+	
+	<update id="bank" parameterType="team.co.kr.entity.Member">
+	<selectKey keyProperty="bank" resultType="team.co.kr.entity.Member" order="AFTER">
+	SELECT bank
+	from member
+	where id=#{id}	
+	</selectKey>
+	
+	update member  SET bank =#{bank}+bank
+	where id=#{id}
+	</update>
+	
 </mapper>
 
