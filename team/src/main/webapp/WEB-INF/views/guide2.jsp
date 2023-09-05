@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>지원하기</title>
+
 </head>
 <style>
 * {
@@ -42,13 +43,13 @@ img {
 
 .수지 {
    position: absolute;
-   bottom: 820px;
+   bottom: 220px;
    left: 1200px;
 }
 
 .input {
    position: absolute;
-   bottom: 870px;
+   bottom: 270px;
    width: 1212px;
    height: 70px;
    font-size: 20px;
@@ -57,7 +58,7 @@ img {
 
 .input1 {
    position: absolute;
-   bottom: 801px;
+   bottom: 198px;
    width: 1212px;
    height: 70px;
    font-size: 20px;
@@ -66,7 +67,7 @@ img {
 
 .input2 {
    position: absolute;
-   bottom: 730px;
+   bottom: 128px;
    width: 1212px;
    height: 70px;
    font-size: 20px;
@@ -75,7 +76,7 @@ img {
 
 .input3 {
    position: absolute;
-   bottom: 660px;
+   bottom: 58px;
    width: 1212px;
    height: 70px;
    font-size: 20px;
@@ -84,9 +85,9 @@ img {
 
 .input4 {
    position: absolute;
-   bottom: 590px;
+   bottom: -5px;
    width: 1212px;
-   height: 70px;
+   height: 60px;
    font-size: 20px;
    right: 0px;
 }
@@ -118,14 +119,14 @@ img {
 
 .type {
    position: absolute;
-   bottom: -470px;
-   left: 345px;
+   bottom: 200px;
+   left: 65px;
 }
 
 .type2 {
    position: absolute;
-   bottom: -605px;
-   left: 300px;
+   bottom: -6px;
+   left: 0px;
 }
 
 .input5 {
@@ -154,10 +155,10 @@ img {
 
 .memo {
    position: absolute;
-   bottom: -962px;
+   bottom: -362px;
    width: 1510px;
    height: 200px;
-   left: 306px;
+   left: 0px;
    font-size:16px;
 }
 
@@ -187,8 +188,8 @@ left:80px;
 }
 .button {
    position: absolute;
-   bottom: -1170px;
-   left: 940px;
+   bottom: -550px;
+   left: 660px;
    width: 200px;
    height: 45px;
    font-weight: bold;
@@ -255,21 +256,29 @@ left:80px;
          <h1 class="line1">
             2030<br> <br>AUDITION
          </h1>
-         <hr class="line" style="border: solid 2px black;"> <input
-         class="input" type="text" placeholder="지원분야:(랩,외모,노래)" /> <input
-         class="input1" type="text" placeholder="이름:" /> <input
-         class="input2" type="text" placeholder="핸드폰번호:" /> <input
-         class="input3" type="text" placeholder="주소:" /> <input
-         class="input4" type="text" placeholder="E-Mail:" /> <img class="수지"
-         src="${root}resources/guide11/mini.png" style="width: 400px;">
+         
+         <hr class="line" style="border: solid 2px black;"> 
+         <form method="post" action="${root}audition/guide2">
+         <input class="input" type="text" id="JIWON" name="JIWON" placeholder="지원분야:(랩,외모,노래)" />
+          <input class="input1" type="text" id="NAME" name="NAME" placeholder="이름:" /> <input
+         class="input2" type="text" id="PONE" name="PONE"  placeholder="핸드폰번호:" /> <input
+         class="input3" type="text" id="ADDRESS" name="ADDRESS" placeholder="주소:" /> <input
+         class="input4" type="text" id="EMAIL" name="EMAIL" placeholder="E-Mail:" /> <img class="수지"
+         src="${root}resources/img/mini.png" style="width: 400px;">
          <div class="file-upload preview-image">
+          <textarea id="HEELO" name="HEELO" class="memo"></textarea>
+          
             <input type="text" class="upload-name" value="" disabled="disabled">
 
-            <input class="upload-name" type="file" id="input-file"
+          <!--    <input class="upload-name" type="file" id="input-file"
                class="upload-hidden">
+               -->
+                   <input class="type" type='file' id="img1" name="img1"/> 
+                   <img class="type2" id="img"   src="#" alt="" width="300px" />
+                <button type="submit" class="button">지원하기</button> 
                
          </div>
-         
+         </form>
          
          <div class="line2"></div>
          <div class="line3"></div>
@@ -284,24 +293,23 @@ left:80px;
          <li class="dd">사진은 300*350px 규격으로 맟춰서 첨부 부탁드립니다</li>
          <li class="ee">당사의 사정에 따라 일정은 변경 될수 있습니다</li></ul>
    <a class="jiwon" href='https://naver.com' target='_blank' > 지원 하기 </a>
-<a class="jiwon1" href='http://localhost:8081/TeamPro/junhyung/junhyung.jsp' target='_blank' > 지원 안내 </a>
+<a class="jiwon1" href='http://localhost:8080/kr/maincontroller/guide' target='_blank' > 지원 안내 </a>
       </td>
 
 
 
 
    </table>
-   <table>
-      <td>
+   
+     
 
 
-         <form id="imgForm">
-            <input class="type" type='file' id="myFile" /> <img class="type2"
-               id="View" src="#" alt="" width="300px" />
-         </form> <script src="http://madalla.kr/js/jquery-1.8.3.min.js"></script> <script
+
+           
+        <script src="http://madalla.kr/js/jquery-1.8.3.min.js"></script> <script
             type="text/javascript">
                $(function() {
-                  $("#myFile").on('change', function() {
+                  $("#img1").on('change', function() {
                      readURL(this);
                   });
                });
@@ -309,28 +317,28 @@ left:80px;
                   if (input.files && input.files[0]) {
                      var reader = new FileReader();
                      reader.onload = function(e) {
-                        $('#View').attr('src', e.target.result);
+                        $("#img").attr('src', e.target.result);
                      }
                      reader.readAsDataURL(input.files[0]);
                   }
                }
+               
+               $(document).ready(function(){
+           		if(${!empty msg}){
+           			alert('${msg}');
+           		}
+           	});
             </script>
 
 
       </td>
 
-   </table>
+   
    <table>
-      <form>
-         <textarea class="memo"></textarea>
-
-      </form>
+    
 
    </table>
-   <table>
-               <a href='https://naver.com' target='_blank'> <button class="button">지원하기</button> </a>
-               
-   </table>
+   
    <!--  -->
    
    </wrap>

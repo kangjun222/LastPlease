@@ -256,7 +256,7 @@ position: absolute;
    </tr>
    <a class="home" href='#' target='_blank' > Home </a>
    <tr>
-   <a class="지원하기" href='http://localhost:8081/TeamPro/junhyung/help.jsp' target='_blank' > 지원 하기 </a>
+   <a class="지원하기" href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank' > 지원 하기 </a>
    <div class="지원안내선1"></div>
    </tr>
    <tr>
@@ -281,7 +281,7 @@ position: absolute;
    
    <tr height="100">
    <td class="버튼">
-      <a href='http://localhost:8081/TeamPro/junhyung/help.jsp' target='_blank'> <button class="button">지원하기</button> </a>
+      <a href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank'> <button class="button">지원하기</button> </a>
    
    </td>
    
