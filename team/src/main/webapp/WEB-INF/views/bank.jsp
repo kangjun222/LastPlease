@@ -119,7 +119,7 @@ top:0px;
 
 
 <table width="1920px" height="200px">
-      <td class="logo" width="200px"><a href="${root}"><img src="${root}resources/img/logo.png"
+      <td class="logo" width="200px"><a href="${root}"><img src="${root}resources/img/로고투명.png"
       
             alt="logo" width="200" height="200"></a></td>
             <td calss= "COIN" height="200px" align="center"><a href="#"><h1>COIN</h1></td>
@@ -153,7 +153,7 @@ top:0px;
 
 	<script type="text/javascript">
     
-    	
+    
     	$(document).ready(function(){
     		if(${!empty msg}){
     			alert('${msg}');

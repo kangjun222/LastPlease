@@ -264,7 +264,7 @@ left:80px;
          class="input2" type="text" id="PONE" name="PONE"  placeholder="핸드폰번호:" /> <input
          class="input3" type="text" id="ADDRESS" name="ADDRESS" placeholder="주소:" /> <input
          class="input4" type="text" id="EMAIL" name="EMAIL" placeholder="E-Mail:" /> <img class="수지"
-         src="${root}resources/img/mini.png" style="width: 400px;">
+         src="${root}resources/guide11/mini.png" style="width: 400px;">
          <div class="file-upload preview-image">
           <textarea id="HEELO" name="HEELO" class="memo"></textarea>
           
