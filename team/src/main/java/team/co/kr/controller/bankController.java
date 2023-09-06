@@ -51,7 +51,11 @@ public class bankController{
 		
 		return "bank";
 	}
-	
+	@GetMapping("modal")
+	public String modal() {
+		
+		return "modal";
 
 }
 
+}
