@@ -30,7 +30,8 @@ public class ItemService {
 		//cos 라이브러리 사용시 사용가능객체 multipartreuqest
 		MultipartRequest multi = null;
 		int filemaxsize = 10*1024*1024; //10mb
-		String savePath = "C:\\work-spring\\team\\src\\main\\webapp\\resources\\upload";
+		String savePath = req.getRealPath("resources/upload");
+		System.out.println(savePath);
 		
 		try {
 			multi = new MultipartRequest(req, savePath,filemaxsize,"UTF-8",new DefaultFileRenamePolicy());			
@@ -58,7 +59,7 @@ public class ItemService {
 		
 		return filename;
 	}
-public int buyitem(Map<String, Object> map) {
+	public int buyitem(Map<String, Object> map) {
 		
 		int result = itmapper.buyitem(map);
 	
@@ -68,6 +69,5 @@ public int buyitem(Map<String, Object> map) {
 	public int mybank(Map<String, Object> map) {
 		return itmapper.mybank(map);
 	}
-	
-	
+
 }

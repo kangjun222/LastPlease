@@ -74,9 +74,12 @@
 						</div>
 				      
 						<div>
-							<a href='https://naver.com' target='_blank'>
-								<button class="button1">바로구매</button>
-							</a>
+							<form method="post"  action="${root}/item/gosellItem">
+								<input type="hidden" name="itemprice" value="${item.itemprice}"/>
+								<input type="hidden" name="itemname" value="${item.itemname}"/>
+								<input type="hidden" name="id" value="${mem.id}"/>
+								<button type="submit"id="buyitem" class="button1">바로구매</button>
+							</form>
 						</div>
 				      
 				      <div>
