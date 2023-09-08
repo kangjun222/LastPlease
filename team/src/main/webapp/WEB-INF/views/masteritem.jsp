@@ -103,12 +103,12 @@
                 <input type="text" id="itemartist" name="itemartist" placeholder=""/><br/></br>
                 
                 <label for="itemname">상품이름</label><br/>
-                <input type="text" id="itemname" name="itemname" placeholder=""/><br/> </br>
+                <input type="text" id="itemname" name="itemname" placeholder=""/><br> <br>
                 <!-- <label for="id">아이디</label><br/> -->
                 <label for="itemprice">상품가격</label><br/>
                 <input type="text" id="itemprice" name="itemprice"  placeholder="" /><br/>
                 
-                  </br>
+                  <br>
            
                 <label for="itemimg">상품이미지</label><br/>
                 <input type="file" id="itemimg" name="itemimg" placeholder=" " /><br/>

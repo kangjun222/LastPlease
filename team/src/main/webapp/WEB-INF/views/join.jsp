@@ -217,7 +217,7 @@
                         <label for="name">이름</label><br/>
                         <input type="text" id="name" name="name" placeholder="이름 입력" onblur="checkName();"/><br/>
                         <div><span id="namecheck"></span></div>
-                        </br>
+                        <br>
                         <!-- <label for="id">아이디</label><br/> -->
                         <label for="address2">아이디</label><br/>
                         <input type="text" id="id" name="id" onblur="checkId();" placeholder="아이디 입력" /><br/>
@@ -226,7 +226,7 @@
                 			<span class="id_ok"></span>
                 		</div>
                         
-                      	</br>
+                      	<br>
                    
                         <label for="pwd">비밀번호</label><br/>
                         <input type="password" id="pwd" name="pwd" onblur="checkpwd();" placeholder="숫자, 영문, 특수문자 포함 8자 이상" /><br/>
@@ -327,7 +327,7 @@
 					       <option value='31'>31일</option>                       
         				 </select>                 
                         </div>
-                    </br>
+                    <br>
                         <label for="gender">성별</label><br/>
                         <div id="genderwrap">
                             <select name="gender" id="gender">
@@ -336,11 +336,11 @@
                             </select>
                         </div>             
                         
-                    </br>
+                    <br>
                         <label for="eamil">이메일</label>
                         <input type="email" id="email" name="email" placeholder="이메일을입력해주세요" onblur="checkEmail();"/><br/><div><b  id="nicknamecheckresult"></b></div>
         				<div><span id="emailcheck"></span></div>
-        				</br>
+        				<br>
                         <label for="phone">핸드폰번호</label><br/>
                         <input type="text" id="phone" name="phone" placeholder="숫자만 입력해주세요" onblur="checkphone();"/><br/>
                         <div><span id="phonecheck"></span></div>

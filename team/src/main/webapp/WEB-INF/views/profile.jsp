@@ -68,9 +68,9 @@
    	<Br>
    	<h2>${artist.birth}</h2>
    	<p>키	${artist.height}cm</p>
-   	<p>데뷔  ${artist.debut}</p></br>
-   	<strong>WORKS</strong></br></br>
-   	<p class="font">작품</p></br>
+   	<p>데뷔  ${artist.debut}</p><br>
+   	<strong>WORKS</strong><br><br>
+   	<p class="font">작품</p><br>
 	<p>
 	${artist.works}
 	</p>
