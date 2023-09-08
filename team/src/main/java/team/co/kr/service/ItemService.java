@@ -1,6 +1,7 @@
 package team.co.kr.service;
 
 import java.io.File;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -57,5 +58,16 @@ public class ItemService {
 		
 		return filename;
 	}
+public int buyitem(Map<String, Object> map) {
+		
+		int result = itmapper.buyitem(map);
+	
+		return result;	
+	}
+	
+	public int mybank(Map<String, Object> map) {
+		return itmapper.mybank(map);
+	}
+	
 	
 }
