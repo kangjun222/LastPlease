@@ -47,11 +47,10 @@ public class NoticeController {
 	 * ���� - servlet-context.xml ���� ///web-inf/views/ + view + .jsp return
 	 * "noti"; }
 	 */
-//준형
+/*//준형
 	@ResponseBody
 	@PostMapping("/url")
 	public NoticeVO url(String content) throws Exception {
 		return service.url(content);
-
+*/
 	}
-}
