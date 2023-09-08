@@ -68,8 +68,8 @@
    	
    	<h2>${groupartist.debutbirth}</h2>
    	<p>멤버 ${groupartist.gmember}</p>
-   	<p>데뷔곡 ${groupartist.debutsong}</p><br>
-   	<strong>WORKS</strong><br><br>
+   	<p>데뷔곡 ${groupartist.debutsong}</p></br>
+   	<strong>WORKS</strong></br></br>
    	<p class="font">앨범</p>
 	<p>
 	${groupartist.works}
