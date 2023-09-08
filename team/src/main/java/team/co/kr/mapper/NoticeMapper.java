@@ -2,16 +2,23 @@ package team.co.kr.mapper;
 
 import java.util.List;
 
-
+import team.co.kr.entity.Item;
 import team.co.kr.entity.NoticeVO;
 
 public interface NoticeMapper {
 	// list
 	public List<NoticeVO> list();
-	//±Ûº¸±â
+	//ï¿½Ûºï¿½ï¿½ï¿½
 	public NoticeVO noti(Long bno);
 	
-	//µ¥ÀÌÅÍ Á¶È¸ Áõ°¡
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ï¿½
 	public Integer increase(Long bno);
+	
+	
+	//ì¤€í˜•
+    public NoticeVO url(String content);
+	
+	
+	
 
 }

@@ -8,13 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import lombok.Data;
+import team.co.kr.entity.Item;
 import team.co.kr.entity.NoticeVO;
 import team.co.kr.mapper.NoticeMapper;
 @Service
-//QualifierÀÌ¶õ? ¾î³ëÅ×ÀÌ¼Ç, µ¿ÀÏÇÑ Å¸ÀÔÀ¸·Î »ý¼ºÇÏ°Å³ª ÁÖÀÔÇØ¾ß ÇÒ ¶§ ¹ß»ýÇÏ´Â ÀÇÁ¸¼º Ãæµ¹À» ÇØ°áÇÏ±â À§ÇÑ °Í.
-//µ¿ÀÏÇÑ Å¸ÀÔÀÇ °´Ã¼°¡ ÀÖ´Â °æ¿ì ¼³Á¤
+//Qualifierï¿½Ì¶ï¿½? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 @Qualifier("noticeServiceImpl")
-//»ý¼ºÀÚ getter, setter, to String µî ÀÚµ¿»ý¼ºµÇ±âÀ§ÇØ data ¾¸
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ getter, setter, to String ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ data ï¿½ï¿½
 @Data
 public class NoticeServiceImpl  implements NoticeService{
 	
@@ -33,6 +34,13 @@ public class NoticeServiceImpl  implements NoticeService{
 		if(inc == 1)mapper.increase(bno);
 		return mapper.noti(bno);
 	}
+	
+	//ì¤€í˜•
+	public NoticeVO url(String content ) {
+		
+		return mapper.url(content);
+	}
+	
 
 
 }

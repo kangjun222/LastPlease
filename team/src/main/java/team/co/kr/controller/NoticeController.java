@@ -5,44 +5,53 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.Data;
-import team.co.kr.service.BoardService;
+import team.co.kr.entity.Item;
+import team.co.kr.entity.NoticeVO;
 import team.co.kr.service.NoticeService;
 
-
 @Controller
-@RequestMapping("/noticecontroller")// ÀÌÂÊ¿¡ µé¾î¿À±âÀ§ÇÑ ÀÌ¸§ ÁöÁ¤
+@RequestMapping("/noticecontroller") // ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 @Data
 public class NoticeController {
-	
+
 	@Autowired
-	
-	  //µ¿ÀÏÇÑ Å¸ÀÔÀÇ °´Ã¼°¡ ÀÖ´Â °æ¿ì ¼³Á¤
-	 
-	 @Qualifier("noticeServiceImpl") 
-	
+
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+	@Qualifier("noticeServiceImpl")
+
 	private NoticeService service;
-	
+
 	@GetMapping("/noticelist")
 	public String list(Model model) throws Exception {
 		System.out.println("NoticeController.list()");
-		model.addAttribute("list", service.list()); 
+		model.addAttribute("list", service.list());
 		System.out.println("NoticeController.noticelist().model - " + model);
-		//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
-		///web-inf/views/ + list + .jsp
+		// jsp ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½
+		/// web-inf/views/ + list + .jsp
+
 		return "noticelist";
 	}
-	
-	//±Ûº¸±â
-		@GetMapping("/noti") //bno ¶û inc ¼ÂÆ®
-		public String noti(Long bno, int inc, Model model) throws Exception {
-			System.out.println("NoticeController.noti().bno / inc = " + bno + "/" + inc);
-			model.addAttribute("vo", service.noti(bno, inc));
-			/* service.increase(vo); */
-			//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
-			///web-inf/views/ + view + .jsp
-			return "noti";
-		}
+
+	// ï¿½Ûºï¿½ï¿½ï¿½
+	/*
+	 * @GetMapping("/noti") //bno ï¿½ï¿½ inc ï¿½ï¿½Æ® public String noti(Long bno, int inc,
+	 * Model model) throws Exception {
+	 * System.out.println("NoticeController.noti().bno / inc = " + bno + "/" + inc);
+	 * model.addAttribute("vo", service.noti(bno, inc)); service.increase(vo); //jsp
+	 * ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½ ///web-inf/views/ + view + .jsp return
+	 * "noti"; }
+	 */
+//ì¤€í˜•
+	@ResponseBody
+	@PostMapping("/url")
+	public NoticeVO url(String content) throws Exception {
+		return service.url(content);
+
+	}
 }

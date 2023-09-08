@@ -113,7 +113,7 @@
 		<table class="table">
 			<tr class="color">
 				<th>NO</th>
-				<th>SUBJECT</th>
+			<th>SUBJECT</th>	
 				<th>DATE</th>
 				<th>CLICK</th>
 			</tr>
@@ -139,5 +139,15 @@
 		</div>
 
 	</div>
+	<!-- 준형 -->
+	<script>
+    document.getElementById(vo.bno ).addEventListener("click", function() {
+        // 데이터베이스에서 URL을 가져오는 로직을 추가해야 합니다.
+        var dbUrl = "https://www.idaegu.co.kr/news/articleView.html?idxno=430379";
+        // 가져온 URL로 이동합니다.
+        window.location.href = dbUrl;
+    });
+</script>
+<!-- 준형 -->
 </body>
 </html>

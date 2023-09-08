@@ -28,4 +28,15 @@
 	</update>
 	
 	
+<!-- 준형 -->	
+	<select id="url" resultType="team.co.kr.entity.NoticeVO"
+	parameterType="team.co.kr.entity.NoticeVO">
+	
+      select content
+      from notice 
+       where bno=#{bno}	
+	
+	</select>
+	<!-- 준형 -->	
+	
 </mapper>
