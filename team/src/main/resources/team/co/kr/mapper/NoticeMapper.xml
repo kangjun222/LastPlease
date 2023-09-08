@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.co.kr.mapper.NoticeMapper">
+	<select id="list" resultType="team.co.kr.entity.NoticeVO">
+		select bno, tittle, content, date3, hit
+		from(
+			select rownum rnum, bno, tittle, content, date3, hit
+			from (
+					select bno, tittle, content, date3, hit
+					from notice
+				)
+		)	
+		where rnum between 1  and 10
+			<!-- rownum 순서대로 나온다 rnum 1번부터한다 -->
+	</select>
+	
+	<select id="noti" resultType="team.co.kr.entity.NoticeVO">
+	 	select bno, tittle, content, date3, hit
+	 	from notice
+	 	where bno=#{bno}
+	</select>
+	
+	
+	<update id="increase">
+	 	update notice
+	 	set hit = hit +1
+	 	where bno = #{bno}
+	</update>
+	
+	
+</mapper>

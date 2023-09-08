@@ -29,7 +29,7 @@ public class ItemService {
 		//cos 라이브러리 사용시 사용가능객체 multipartreuqest
 		MultipartRequest multi = null;
 		int filemaxsize = 10*1024*1024; //10mb
-		String savePath = req.getRealPath("resources/upload");
+		String savePath = "C:\\work-spring\\team\\src\\main\\webapp\\resources\\upload";
 		
 		try {
 			multi = new MultipartRequest(req, savePath,filemaxsize,"UTF-8",new DefaultFileRenamePolicy());			

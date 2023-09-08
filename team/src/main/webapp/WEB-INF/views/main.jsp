@@ -124,7 +124,7 @@
 					</div></li>
 				<li><a href="${root}maincontroller/artistcontrollermain"><h1><b>ARTIST</h1></b></a></li>
 				<li><a href="${root}maincontroller/gostore"><h1><b>STORE</h1></b></a></li>
-				<li><a href="#"><h1><b>NEW & NOTICE</h1></b></a></li>
+				<li><a href="${root}noticecontroller/noticelist"><h1><b>NEW & NOTICE</h1></b></a></li>
 				
 				<li>
 				<a href="javascript:Auditionmenu();"><h1><b>AUDITION</h1></b></a>
@@ -244,7 +244,7 @@
 
 			<div id="newjeanswrap">
 				<div id="newjeans">
-					<a href="#"><img src="${root}resources/img/comunewjeans.png"
+					<a href="${root}board/list"><img src="${root}resources/img/comunewjeans.png"
 						alt="커뮤니티 뉴진스">
 						<h1>
 							<b>뉴진스 국내외 차트 쾌조!</b>
