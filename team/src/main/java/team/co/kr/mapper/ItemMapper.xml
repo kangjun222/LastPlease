@@ -13,4 +13,17 @@
 		#{itemartist}
 		)
 	</insert>
+	<update id="buyitem" parameterType="hashMap">
+		<selectKey keyProperty="bank" order="BEFORE" resultType="int">
+			select bank from member 
+			where id = #{member.id} 			
+		</selectKey>
+
+			update member set bank = bank-#{item.itemprice}
+			where id = #{member.id}		
+	</update>
+
+	<select id="mybank" parameterType="hashMap" resultType="int">
+		select bank-#{item.itemprice} from member where id=#{member.id}
+	</select>		
 </mapper>
