@@ -4,7 +4,7 @@
 <c:set var="root" value="${pageContext.request.contextPath}/" />
 <!DOCTYPE html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>현재시간</title>
 <style>
 
