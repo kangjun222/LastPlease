@@ -37,8 +37,9 @@ public class AuditionController {
 		
 		
 		return "guide2";
-		
-		
+		/*
+		 * rldㅈㅇㅁㄴㅇ
+		 */
 		
 		
 		
