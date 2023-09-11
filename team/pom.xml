@@ -13,8 +13,6 @@
 		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
-		<!-- project 절대 위치를 property로 설정 - 본인의 위치 -->
-		<project.basedir>C:\Users\ksh89\git\repository\team3</project.basedir>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
