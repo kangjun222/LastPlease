@@ -8,11 +8,37 @@
 			from (
 					select bno, title, content, writer, writerDate, hit
 					from board
+					<include refid="search"/> <!--  검색을 읽어야됨 -->
+					<!-- order by no desc -->
 				)
 		)	
-		where rnum between 1  and 10
+		where rnum between #{startRow} and #{endRow}
 			<!-- rownum 순서대로 나온다 rnum 1번부터한다 -->
 	</select>
+	<!--page처리단계  -->
+	<select id="getTotalRow" resultType="Long">
+		select count(*)
+		from board
+		<include refid="search"/> <!--  검색을 읽어야됨 -->
+	</select>
+	
+	<!--동적query  -->
+	<sql id="search">
+		<!--검색이 필요한경우  -->
+		<if test="word != null and word != ''">
+			where 1 = 0
+			<if test ="key.indexOf('t') >= 0">
+				or title like '%' || #{word} || '%'
+			</if>
+			<if test ="key.indexOf('c') >= 0">
+				or content like '%' || #{word} || '%'
+			</if>
+			<if test ="key.indexOf('w') >= 0">
+				or writer like '%' || #{word} || '%'
+			</if>
+		</if>
+	
+	</sql>
 	
 	<select id="view" resultType="team.co.kr.entity.BoardVO">
 	 	select bno, title, content, writer, writerDate, hit

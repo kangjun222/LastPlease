@@ -2,12 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="team.co.kr.mapper.NoticeMapper">
 	<select id="list" resultType="team.co.kr.entity.NoticeVO">
-		select bno, tittle, content, date3, hit
+		select bno, tittle, url, date3, hit
 		from(
-			select rownum rnum, bno, tittle, content, date3, hit
+			select rownum rnum, bno, tittle, url, date3, hit
 			from (
-					select bno, tittle, content, date3, hit
+					select bno, tittle, url, date3, hit
 					from notice
+					<include refid="search"/> <!--  검색을 읽어야됨 -->
 				)
 		)	
 		where rnum between 1  and 10
@@ -15,11 +16,15 @@
 	</select>
 	
 	<select id="noti" resultType="team.co.kr.entity.NoticeVO">
-	 	select bno, tittle, content, date3, hit
+	 	select bno, tittle, url, date3, hit
 	 	from notice
 	 	where bno=#{bno}
 	</select>
-	
+	<select id="getTotalRow" resultType="Long">
+		select count(*)
+		from notice
+		<include refid="search"/> <!--  검색을 읽어야됨 -->
+	</select>
 	
 	<update id="increase">
 	 	update notice
@@ -27,16 +32,28 @@
 	 	where bno = #{bno}
 	</update>
 	
+	<!--동적query  -->
+	<sql id="search">
+		<!--검색이 필요한경우  -->
+		<if test="word != null and word != ''">
+			where 1 = 0
+			<if test ="key.indexOf('t') >= 0">
+				or title like '%' || #{word} || '%'
+			</if>
+			<if test ="key.indexOf('c') >= 0">
+				or content like '%' || #{word} || '%'
+			</if>
+			<if test ="key.indexOf('w') >= 0">
+				or writer like '%' || #{word} || '%'
+			</if>
+		</if>
 	
-<!-- 준형 -->	
-	<select id="url" resultType="team.co.kr.entity.NoticeVO"
-	parameterType="team.co.kr.entity.NoticeVO">
+	</sql>
 	
-      select content
-      from notice 
-       where bno=#{bno}	
-	
-	</select>
-	<!-- 준형 -->	
+	<select id="getURLByBno" resultType="java.lang.String">
+        SELECT url
+        FROM notice
+        WHERE bno = #{bno}
+    </select>
 	
 </mapper>

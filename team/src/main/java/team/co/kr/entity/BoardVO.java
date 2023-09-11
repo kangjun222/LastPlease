@@ -5,7 +5,7 @@ import java.sql.Date;
 import lombok.Data;
 
 
-//»ý¼ºÀÚ,getter, setter, toString ÀÚµ¿À¸·Î ¸¸µé¾îÁØ´Ù.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,getter, setter, toString ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 @Data
 public class BoardVO {
 	private Long bno;

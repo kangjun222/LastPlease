@@ -7,28 +7,33 @@ import javax.inject.Inject;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.webjjang.util.page.PageObject;
+
 import lombok.Data;
 import team.co.kr.entity.BoardVO;
 import team.co.kr.mapper.BoardMapper;
 
-//ÀÚµ¿»ı¼º - @Controller, @Service, @Repository, @Component, @Advice, @RestController 
-//servlet-context.xml, root-context.xml ¿¡ ¼³Á¤µÇ¾î ÀÖ¾î¾ßÇÑ´Ù.
+//ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ - @Controller, @Service, @Repository, @Component, @Advice, @RestController 
+//servlet-context.xml, root-context.xml ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½Ñ´ï¿½.
 @Service
-// QualifierÀÌ¶õ? ¾î³ëÅ×ÀÌ¼Ç, µ¿ÀÏÇÑ Å¸ÀÔÀ¸·Î »ı¼ºÇÏ°Å³ª ÁÖÀÔÇØ¾ß ÇÒ ¶§ ¹ß»ıÇÏ´Â ÀÇÁ¸¼º Ãæµ¹À» ÇØ°áÇÏ±â À§ÇÑ °Í.
-//µ¿ÀÏÇÑ Å¸ÀÔÀÇ °´Ã¼°¡ ÀÖ´Â °æ¿ì ¼³Á¤
+// Qualifierï¿½Ì¶ï¿½? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ß»ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ï¿½ï¿½ ï¿½Ø°ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 @Qualifier("boardServiceImpl")
-//»ı¼ºÀÚ getter, setter, to String µî ÀÚµ¿»ı¼ºµÇ±âÀ§ÇØ data ¾¸
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ getter, setter, to String ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ data ï¿½ï¿½
 @Data
 public class BoardServiceImpl implements BoardService{
-	//ÀÚµ¿ di - @Autowired, @Inject
+	//ï¿½Úµï¿½ di - @Autowired, @Inject
 	@Inject
 	private BoardMapper mapper;
 	
 	@Override
-	public List<BoardVO> list() throws Exception {
+	public List<BoardVO> list(PageObject pageObject) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("BoardService.list()");
-		return mapper.list();
+		//ì „ì²´ ë°ì´ì²˜ ê°œìˆ˜ ê°€ì ¸ì˜¤ê¸° + í™”ë©´ì— ì¶œë ¥í•  í˜ì´ì§€ ì •ë³´ë¥¼ ì„¸íŒ…(setTotalRow)
+		pageObject.setTotalRow(mapper.getTotalRow(pageObject));
+		System.out.println("BoardService.list().pageObject - " + pageObject);
+		return mapper.list(pageObject);
 	}
 
 	//write

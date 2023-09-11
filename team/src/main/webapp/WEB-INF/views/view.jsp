@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  
+
   
   <style type="text/css">
   	#deleteDiv{
@@ -29,8 +29,57 @@
   	});
   	//삭제부분에 주는 버튼 클릭시 1번이 2번작동하게.
   </script>
+<<script>
+$(document).ready(function() {
+  // 폼 제출 시 모달 창을 표시
+// "삭제" 버튼을 클릭하여 모달 창 열기
+$("#deleteBtn").click(function() {
+  $("#deleteModal").modal("show"); // 모달 창 표시
+});
+
+// 모달 창에서 확인 버튼 클릭 시 글 삭제
+$("#deleteConfirmBtn").click(function() {
+  $.ajax({
+    type: "POST",
+    url: "delete",
+    data: {
+      bno: "${vo.bno }",
+      perPageNum: "${param.perPageNum }"
+    },
+    success: function(response) {
+      if (response === "success") {
+        // 삭제가 성공하면 모달 창 닫음
+        $("#deleteModal").modal("hide");
+
+        // 삭제 후 원하는 동작 수행 (예: 리스트 페이지로 리다이렉션)
+        window.location.href = "list?page=${param.page }&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}";
+      } else {
+        alert("삭제에 실패했습니다.");
+      }
+    }
+  });
+});
+</script>
 </head>
 <body>
+ <!--모달창  -->
+<div id="deleteModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- 모달 내용 -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">H entertainment</h4>
+      </div>
+      <div class="modal-body">
+        <p>H entertainment 게시판 글삭제가 완료되었습니다.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="container">
 <%--  ${vo} --%>
 	<h2>H entertainment 글보기</h2>
@@ -60,21 +109,24 @@
 			<td>${vo.hit }</td>
 		</tr>
 	</table>
-	<a href="update?bno=${vo.bno }" class="btn btn-default">수정</a>
+	<a href="update?bno=${vo.bno }&page=${param.page }&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}" class="btn btn-default">수정</a>
 	<a href="#"  class="btn btn-default" id="deleteBtn">삭제</a>
-	<a href="list"  class="btn btn-default">리스트</a>
+	<a href="list?page=${param.page }&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}" 
+	 class="btn btn-default">리스트</a>
 	
 		<div id="deleteDiv">
 		<form action="delete" method="post">
-		<input name="bno" type="hidden" value="${vo.bno }">
+			<input name="bno" type="hidden" value="${vo.bno }">
+			<input name="perPageNum" type="hidden" value="${param.perPageNum }">
 			<div class="panel panel-default">
 				<div class="panel-heading">글 삭제를 원하십니까?</div>
 			<!-- 	<div class="panel-body">
 					<input name="writer" type="text" class="form-control" id="writer">
 				</div> -->
 				<div class="panel-footer">
-					<button class="btn btn-default">삭제</button>
-					<button id="cancelBtn" class="btn btn-default" type="button">취소</button>
+					<button cid="deleteConfirmBtn" class="btn btn-danger">삭제</button> 
+					<%-- <a href="list?perPageNum=${pageObject.perPageNum }" class="btn btn-default">삭제</a> --%>
+					<button id="cancleBtn" class="btn btn-default" type="button">취소</button>
 				</div>
 			</div>
 		</form>

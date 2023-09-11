@@ -2,16 +2,21 @@ package team.co.kr.mapper;
 
 import java.util.List;
 
+import com.webjjang.util.page.PageObject;
+
 import team.co.kr.entity.BoardVO;
 
 public interface BoardMapper {
 	// list
-	public List<BoardVO> list();
+	public List<BoardVO> list(PageObject pageObject);
 
-	// view ¼¿·ºÅÂ±×
+	//í˜ì´ì§€ì²˜ë¦¬í•˜ëŠ”ê³³ //ê²€ìƒ‰í•œë°ì´í„°ê°€ ìˆìœ¼ë©´ í˜ì´ì§€ ì²˜ë¦¬ë¥¼ í•´ì„œ í•´ì•¼ë˜ë¯€ë¡œ()ì´ì•ˆì— ë„£ì–´ì•¼ë¨ í˜ì´ì§€ì˜¤ë¸Œì ì„.
+	public Long getTotalRow(PageObject pageObject);
+	
+	// view ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½
 	public BoardVO view(Long bno);
 
-	// increase ¸®ÅÏÅ¸ÀÔÀÌ ¾÷µ¥ÀÌÆ® °æ¿ì ÀÎÆ¼Àú
+	// increase ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½
 	public Integer increase(Long bno);
 
 	// write
@@ -23,6 +28,8 @@ public interface BoardMapper {
 	// delete
 	public Integer delete(BoardVO vo);
 
+	
+
 
 }
-//db»ç¿ë¤·ÇÏ´ÂºÎºĞ
+//dbï¿½ï¿½ë¤·ï¿½Ï´ÂºÎºï¿½

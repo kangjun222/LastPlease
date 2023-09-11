@@ -5,89 +5,104 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.webjjang.util.page.PageObject;
 
 import lombok.Data;
 import team.co.kr.entity.BoardVO;
 import team.co.kr.service.BoardService;
 
-//ÀÚµ¿»ı¼º - @Controller, @Service, @Repository, @Component, @Advice, @RestController 
-//servlet-context.xml, root-context.xml ¿¡ ¼³Á¤µÇ¾î ÀÖ¾î¾ßÇÑ´Ù.
-//url ¸ÅÇÎ- Å¬·¡½º À§¿¡ ºÙÀÎ °ÍÀº ¾Õ¿¡ ºÙÀÌ´Â urlÀÇ¹Ì 
+//ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ - @Controller, @Service, @Repository, @Component, @Advice, @RestController 
+//servlet-context.xml, root-context.xml ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½Ñ´ï¿½.
+//url ï¿½ï¿½ï¿½ï¿½- Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Õ¿ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ urlï¿½Ç¹ï¿½ 
 @Controller
-@RequestMapping("/board")// ÀÌÂÊ¿¡ µé¾î¿À±âÀ§ÇÑ ÀÌ¸§ ÁöÁ¤
+@RequestMapping("/board")// ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 @Data
 public class BoardController {
 	
-	//ÀÚµ¿ id - @Autowire : spring, @Inject : javax
+	//ï¿½Úµï¿½ id - @Autowire : spring, @Inject : javax
 	@Autowired
-	//µ¿ÀÏÇÑ Å¸ÀÔÀÇ °´Ã¼°¡ ÀÖ´Â °æ¿ì ¼³Á¤
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Qualifier("boardServiceImpl")
 	private BoardService service;
-	//jsp¿¡ µ¥ÀÌÅÍ¸¦ Àü´ŞÇÏ·Á¸é model À» parameterType·Î ¹Ş´Â´Ù. -->request¿¡ Å×ÀÌÅÍ°¡ ´ã±â°ÔµÈ´Ù.
-	@GetMapping("/list")
-	public String list(Model model) throws Exception {
+	//jspï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ model ï¿½ï¿½ parameterTypeï¿½ï¿½ ï¿½Ş´Â´ï¿½. -->requestï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ÔµÈ´ï¿½.
+	@GetMapping("/list") //ëª¨ë¸ì–´íŠ¸ë¦¬ë·°íŠ¸
+	public String list(Model model, @ModelAttribute PageObject pageObject) throws Exception {
 		System.out.println("BoardController.list()");
-		model.addAttribute("list", service.list()); 
+		model.addAttribute("list", service.list(pageObject)); //ì—¬ê¸°ì„œ ê³„ì‚°ëœ í˜ì´ì§€ ì˜¤ë¸Œì íŠ¸ê°€
+		/* model.addAttribute("pageObject", pageObject); */ //ì—¬ê¸°ë¡œ ë‹´ê²¨ì„œ ë“¤ì–´ê°„ë‹¤.ëª¨ë¸ì–´íŠ¸ë¦¬ë·°íŠ¸ë¥¼ ì‚¬ìš©í•˜ë©´ ì•ˆì¨ë„ë˜ëŠ”ë¶€ë¶„
 		System.out.println("BoardController.list().model - " + model);
-		//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
+		//jsp ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½
 		///web-inf/views/ + list + .jsp
 		return "list";
 	}
-	//±Ûº¸±â
-	@GetMapping("/view") //bno ¶û inc ¼ÂÆ®
+	//ï¿½Ûºï¿½ï¿½ï¿½
+	@GetMapping("/view") //bno ï¿½ï¿½ inc ï¿½ï¿½Æ®
 	public String view(Long bno, int inc, Model model) throws Exception {
 		System.out.println("BoardController.view().bno / inc = " + bno + "/" + inc);
 		model.addAttribute("vo", service.view(bno, inc));
 		/* service.increase(vo); */
-		//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
+		//jsp ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½
 		///web-inf/views/ + view + .jsp
 		return "view";
 	}
-	//±Ûµî·ÏÆû
+	//ï¿½Ûµï¿½ï¿½ï¿½ï¿½
 	@GetMapping("/write")
 	public String writeForm() throws Exception {
 		System.out.println("BoardController.writeForm()");
-		//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
+		//jsp ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½
 		///web-inf/views/ + write + .jsp
 		return "write";
 	}
-	//±Ûµî·Ï Ã³¸®
+	//ï¿½Ûµï¿½ï¿½ Ã³ï¿½ï¿½
 	@PostMapping("/write")
-	public String write(BoardVO vo) throws Exception {
+	public String write(BoardVO vo, Long perPageNum) throws Exception {
 		System.out.println("BoardController.write().vo - " + vo);
 		service.write(vo);
-		//ÀÌµ¿url Á¤º¸ : ¿·¿¡"redirect:" À» ºÙ¿©¾ßÇÔ 
+		//ï¿½Ìµï¿½url ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½"redirect:" ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½ 
 		///web-inf/views/ + write + .jsp
-		return "redirect:list";
+		return "redirect:list?perPageNum=" + perPageNum;
 	}
-	//±Û¼öÁ¤ Æû
+	//ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½
 	@GetMapping("/update")
 	public String updateForm(Long bno, Model model) throws Exception {
 		System.out.println("BoardController.updateForm()");
 		model.addAttribute("vo", service.view(bno, 0));
-		//jsp Á¤º¸ - servlet-context.xml ¼³Á¤
+		//jsp ï¿½ï¿½ï¿½ï¿½ - servlet-context.xml ï¿½ï¿½ï¿½ï¿½
 		///web-inf/views/ + write + .jsp
 		return "update";
 	}
-	//±Û¼öÁ¤ Ã³¸®
+	//ï¿½Û¼ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	@PostMapping("/update")
-	public String update(BoardVO vo) throws Exception {
+	public String update(BoardVO vo, PageObject pageObject) throws Exception {
 		System.out.println("BoardController.update().vo - " + vo);
 		service.update(vo);
-		//ÀÌµ¿url Á¤º¸ : ¿·¿¡"redirect:" À» ºÙ¿©¾ßÇÔ 
+		//ï¿½Ìµï¿½url ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½"redirect:" ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½ 
 		///web-inf/views/ + write + .jsp
-		return "redirect:view?bno=" + vo.getBno() + "&inc=0"; //1¼öÁ¤ÇÏÁö¸»¶ó°í
+		/* rttr.addFlashAttribute("msg", "H entertainment ê²Œì‹œíŒ ê¸€ìˆ˜ì •ì´ ë˜ì—ˆìŠµë‹ˆë‹¤."); */
+		return "redirect:view?bno=" + vo.getBno() + "&inc=0"
+				+ "&" + pageObject.getPageQuery();
+			/*
+			 * +"&page=" + pageObject.getPage() +"&perPageNum=" + pageObject.getPerPageNum()
+			 * +"&key=" + pageObject.getKey() +"&word=" +
+			 * URLEncoder.encode(pageObject.getWord(), "utf-8")
+			 */
+
 	}
-	//±Û»èÁ¦ Ã³¸®
+	//ï¿½Û»ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		@PostMapping("/delete")
-		public String delete(BoardVO vo) throws Exception {
-			System.out.println("BoardController.delete().vo - " + vo);
+		public String delete(BoardVO vo, Long perPageNum) throws Exception {
+			System.out.println("BoardController.delete().vo - " 
+		+ vo);
 			service.delete(vo);
-			//ÀÌµ¿url Á¤º¸ : ¿·¿¡"redirect:" À» ºÙ¿©¾ßÇÔ 
+			//ï¿½Ìµï¿½url ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½"redirect:" ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ï¿½ï¿½ 
 			///web-inf/views/ + write + .jsp
-			return "redirect:list"; //1¼öÁ¤ÇÏÁö¸»¶ó°í
+			
+			return "redirect:list?perPageNum=" + perPageNum;
+		
 		}
 }
