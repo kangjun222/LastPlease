@@ -31,34 +31,34 @@
   </script>
 <<script>
 $(document).ready(function() {
-  // 폼 제출 시 모달 창을 표시
-// "삭제" 버튼을 클릭하여 모달 창 열기
-$("#deleteBtn").click(function() {
-  $("#deleteModal").modal("show"); // 모달 창 표시
-});
+	  
+	  // 폼 제출 시 모달 창을 표시
+	  $("form").submit(function(event) {
+	    event.preventDefault(); // 기본 제출 동작을 막음
+	    
+	    // 글 등록 로직 시작
+	    var formData = $("form").serialize(); // 폼 데이터를 가져옴
 
-// 모달 창에서 확인 버튼 클릭 시 글 삭제
-$("#deleteConfirmBtn").click(function() {
-  $.ajax({
-    type: "POST",
-    url: "delete",
-    data: {
-      bno: "${vo.bno }",
-      perPageNum: "${param.perPageNum }"
-    },
-    success: function(response) {
-      if (response === "success") {
-        // 삭제가 성공하면 모달 창 닫음
-        $("#deleteModal").modal("hide");
+	    $.ajax({
+	      url: "delete", // 글 등록을 처리하는 서버 측 URL로 변경
+	      type: "POST",
+	      data: formData,
+	      success: function(data) {
+	        // 등록 성공 시 모달 창 표시
+	        $("#deleteModal").modal("show");
 
-        // 삭제 후 원하는 동작 수행 (예: 리스트 페이지로 리다이렉션)
-        window.location.href = "list?page=${param.page }&perPageNum=${param.perPageNum}&key=${param.key}&word=${param.word}";
-      } else {
-        alert("삭제에 실패했습니다.");
-      }
-    }
-  });
-});
+	        // 모달이 닫힐 때 이벤트 핸들러
+	        $("#deleteModal").on("hidden.bs.modal", function () {
+	          window.location.href = "list"; // 원하는 리스트 페이지로 리다이렉션
+	        });
+	      },
+	      error: function() {
+	        // 등록 실패 시 처리
+	        alert("글 등록에 실패했습니다.");
+	      }
+	    });
+	  });
+	});
 </script>
 </head>
 <body>

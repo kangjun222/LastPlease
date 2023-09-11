@@ -15,28 +15,35 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
  <script>
-$(document).ready(function() {
-  $("#updateBtn").click(function() {
-    // 폼을 서버로 제출한 후 성공하면 모달 창을 엽니다.
-     $("#successModal").modal("show"); // 모달 창 표시
-    $("form").submit(function(e) {
-      e.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: "update",
-        data: $("form").serialize(),
-        success: function(response) {
-          if (response === "success") {
-            $("#successModal").modal("show"); // 수정 성공 모달 창 표시
-          } else {
-            alert("수정에 실패했습니다.");
-          }
-        }
-      });
-    });
-  });
-});
+ $(document).ready(function() {
+	  
+	  // 폼 제출 시 모달 창을 표시
+	  $("form").submit(function(event) {
+	    event.preventDefault(); // 기본 제출 동작을 막음
+	    
+	    // 글 등록 로직 시작
+	    var formData = $("form").serialize(); // 폼 데이터를 가져옴
 
+	    $.ajax({
+	      url: "update", // 글 등록을 처리하는 서버 측 URL로 변경
+	      type: "POST",
+	      data: formData,
+	      success: function(data) {
+	        // 등록 성공 시 모달 창 표시
+	        $("#successModal").modal("show");
+
+	        // 모달이 닫힐 때 이벤트 핸들러
+	        $("#successModal").on("hidden.bs.modal", function () {
+	          window.location.href = "list"; // 원하는 리스트 페이지로 리다이렉션
+	        });
+	      },
+	      error: function() {
+	        // 등록 실패 시 처리
+	        alert("글 등록에 실패했습니다.");
+	      }
+	    });
+	  });
+	});
 </script>
 </head>
 <body>
@@ -53,7 +60,8 @@ $(document).ready(function() {
         <p>H entertainment 게시판 글수정이 완료되었습니다.</p>
       </div>
       <div class="modal-footer">
-        <a href="view?bno=${vo.bno }" class="btn btn-primary">확인</a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      
       </div>
     </div>
   </div>
