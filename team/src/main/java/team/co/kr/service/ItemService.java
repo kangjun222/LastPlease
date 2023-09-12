@@ -33,6 +33,12 @@ public class ItemService {
 		String savePath = req.getRealPath("resources/upload");
 		System.out.println(savePath);
 		
+		File uploadfile= new File(savePath);
+		
+		if(uploadfile != null) {
+			uploadfile.mkdir();
+		}
+		
 		try {
 			multi = new MultipartRequest(req, savePath,filemaxsize,"UTF-8",new DefaultFileRenamePolicy());			
 		}
@@ -40,6 +46,7 @@ public class ItemService {
 			return "redirect:/item/addItemForm";
 		}
 		
+	
 		//파일이름가져오기
 		String filename = "";
 		File file = multi.getFile("itemimg");//업로드됨
@@ -47,6 +54,7 @@ public class ItemService {
 		if(file != null) {
 			String ext = file.getName().substring(file.getName().lastIndexOf(".")+1);
 			ext = ext.toUpperCase();
+			
 			
 			if(ext.equals("JPG") || ext.equals("PNG") || ext.equals("GIF")) {
 				filename = file.getName();

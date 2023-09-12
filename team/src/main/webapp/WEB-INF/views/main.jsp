@@ -98,7 +98,7 @@
 					
 					<c:if test="${mem.id ne 'master'}">
 						<li>
-							<a href="${root}member/gojoin">
+							<a href="${root}member/cartList?id=${mem.id}">
 								<i class="fa-solid fa-user">Mypage</i>
 							</a>
 						</li>

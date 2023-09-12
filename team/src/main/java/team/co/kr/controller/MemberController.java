@@ -1,15 +1,19 @@
 package team.co.kr.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import team.co.kr.entity.Cart;
 import team.co.kr.entity.Member;
 import team.co.kr.service.memberService;
 
@@ -78,5 +82,50 @@ public class MemberController {
 		
 		return memberservice.checkId(member);
 	}
-
+	
+	@ResponseBody
+	@GetMapping(value="/addCart",produces="application/text;charset=UTF-8")
+	public String addCart(Cart cart, Model model) {
+		
+		String msg = "";
+		int result = memberservice.checkitemname(cart);
+		if(result==1) {
+			msg = "이미 등록된 상품입니다.";
+			return msg;
+		}
+		
+		System.out.println(cart);
+		result = memberservice.addCart(cart);
+	
+		
+		
+		
+		if(result == 1) {
+			msg = "장바구니 등록이 완료되었습니다.";
+		}
+		else {
+			msg = "장바구니 등록이 실패하였습니다.";
+		}
+		return msg;
+	}
+	
+	@GetMapping("/cartList")
+	public String cartList(Cart cart , Model model) {
+		List<Cart> carts = memberservice.cartList(cart);
+		
+		model.addAttribute("carts", carts);
+		
+		return "Mypage";
+	}
+	
+	@ResponseBody
+	@GetMapping(value="/deletes",produces="application/text;charset=UTF-8")
+		public String cartdelete(Cart cart) {
+		int result = memberservice.deletes(cart);
+		String msg = "";
+		if(result == 1) {
+			msg = "삭제가 완료되었습니다";			
+		}
+		return msg;
+	}
 }

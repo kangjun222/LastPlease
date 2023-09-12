@@ -44,7 +44,33 @@
 	where id={id}
 	</select>
 	
+	<insert id="addCart" parameterType="team.co.kr.entity.Cart">
+		insert into cart 
+		(
+			id,
+			itemname,
+			itemprice,
+			itemimg
+		)
+		values(
+			#{id},
+			#{itemname},
+			#{itemprice},
+			#{itemimg}		
+		)
+	</insert>
 	
+	<select id="cartList" resultType="team.co.kr.entity.Cart" parameterType="team.co.kr.entity.Cart">
+		select * from cart where id = #{id}
+	</select>
 	
+	<delete id="deletes" parameterType="team.co.kr.entity.Cart">
+		delete from cart where itemname = #{itemname} and id = #{id}
+	</delete>
+	
+	<select id ="checkitemname" parameterType="team.co.kr.entity.Cart" resultType="int">
+		select count(*) from cart
+		where itemname=#{itemname}
+	</select>
 </mapper>
 

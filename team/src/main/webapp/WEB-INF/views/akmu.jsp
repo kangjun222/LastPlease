@@ -25,7 +25,22 @@
     function closeModal(idx){
     	$(".modal"+idx).css('display','none');
     }
-
+	
+    function addCart(idx){
+    	var cartForm = $("#cartForm"+idx).serialize();
+    	
+    	$.ajax({
+    		url:"${root}member/addCart",
+    		type:"get",
+    		data:cartForm,
+    		success:function(msg){
+    			alert(msg);
+    		},
+    		error: function(){
+    			alert("addCartError");
+    		}
+    	});
+    }
     </script>
 </head>
 <body>
@@ -38,9 +53,9 @@
 
             
            <div>
-            <h1>ITEM REVIEW</h1>
-            <button id="button">충전하기</button>
-            <button  id="button">잔액조회</button>
+             <a href="${root}board/list">ITEM REVIEW</a>
+            <a href="${root}/bankcontroller/bankform" class="but" data-text="충전하기">충전하기</a>
+        <a href="${root}/bankcontroller/modal" class="but1" data-text="잔액조회">잔액조회</a>
         
            </div>
             
@@ -52,6 +67,8 @@
 
         <div id="banner2">
         
+        	<div id="banner2">
+        
         	<c:forEach items="${items}" var="item" varStatus="idx">
 	        	<div class="bannerimg">
 	        		<a href="#">
@@ -61,7 +78,7 @@
 	                 <h1>단독판매</h1>
 	                 <p>${item.itemname}</p>
 	                 <p>${item.itemprice}</p>
-	                 </div>
+	            </div>
 	            </div>
 	            
 	            <div class="modal${idx.count}" style="display: none;">
@@ -75,18 +92,23 @@
 						</div>
 				      
 						<div>
-							<form method="post"  action="${root}/item/gosellItem">
+						<form method="post"  action="${root}/item/gosellItem">
 								<input type="hidden" name="itemprice" value="${item.itemprice}"/>
 								<input type="hidden" name="itemname" value="${item.itemname}"/>
 								<input type="hidden" name="id" value="${mem.id}"/>
 								<button type="submit"id="buyitem" class="button1">바로구매</button>
-							</form>
+						</form>
+						
 						</div>
 				      
 				      <div>
-					      <a href='https://naver.com' target='_blank'>
-					      	<button class="button2">장바구니</button>
-					      </a>
+				      	 <form id="cartForm${idx.count}">
+				      	 	<input type="hidden" name="itemname" value="${item.itemname}"/>
+				      	 	<input type="hidden" name="itemprice" value="${item.itemprice}"/>
+				      	 	<input type="hidden" name="itemimg" value="${item.itemimg}"/>
+				      	 	<input type="hidden" name="id" value="${mem.id}"/>
+				      	 	<button class="button2" type="button" onclick="addCart(${idx.count});">장바구니</button>
+				      	 </form>					   
 				      </div>
 				      
 				       <div id="closebt">

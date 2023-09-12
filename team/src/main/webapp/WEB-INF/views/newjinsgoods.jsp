@@ -25,7 +25,22 @@
     function closeModal(idx){
     	$(".modal"+idx).css('display','none');
     }
-
+	
+    function addCart(idx){
+    	var cartForm = $("#cartForm"+idx).serialize();
+    	
+    	$.ajax({
+    		url:"${root}member/addCart",
+    		type:"get",
+    		data:cartForm,
+    		success:function(msg){
+    			alert(msg);
+    		},
+    		error: function(){
+    			alert("addCartError");
+    		}
+    	});
+    }
     </script>
 </head>
 <body>
@@ -78,14 +93,18 @@
 								<input type="hidden" name="itemname" value="${item.itemname}"/>
 								<input type="hidden" name="id" value="${mem.id}"/>
 								<button type="submit"id="buyitem" class="button1">바로구매</button>
-							</form>
+						</form>
 						
 						</div>
 				      
 				      <div>
-					      <a href='https://naver.com' target='_blank'>
-					      	<button class="button2">장바구니</button>
-					      </a>
+				      	 <form id="cartForm${idx.count}">
+				      	 	<input type="hidden" name="itemname" value="${item.itemname}"/>
+				      	 	<input type="hidden" name="itemprice" value="${item.itemprice}"/>
+				      	 	<input type="hidden" name="itemimg" value="${item.itemimg}"/>
+				      	 	<input type="hidden" name="id" value="${mem.id}"/>
+				      	 	<button class="button2" type="button" onclick="addCart(${idx.count});">장바구니</button>
+				      	 </form>					   
 				      </div>
 				      
 				       <div id="closebt">
