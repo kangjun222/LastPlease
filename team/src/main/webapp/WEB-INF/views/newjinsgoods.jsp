@@ -42,6 +42,144 @@
     	});
     }
     </script>
+    <style>
+	.but {
+	position: absolute;
+	top:140px;
+   	left:1700px;
+	transform: translate(-50%, -50%);
+	width: 120px;
+ 	height: 50px;
+	line-height: 50px; /*텍스트 간격또는 높이   */
+	font-size: 17px;
+	text-align: center; 
+	text-decoration: none; /*텍스트 밑줄이나 선을 지우는 */
+	text-transform: uppercase; /*text-transform은 대소문자 변환 용어 uppercase는 모두 대문자로 변형*/
+	letter-spacing: 2px; /*문자 사이의 간격지정  */
+	background: black;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	
+}
+.but:before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: white;
+	color: black;
+	transition: 0.5s;/* 회전 속도 */
+	transform-origin: bottom; /*회전  bottom에 붙어 회전 */
+	transform: translatey(-100%) rotatex(90deg); /* 회전 */
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.but:hover:before {
+	transform: translatey(0) rotatex(0deg);
+}
+.but:after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: #212121;
+	color: white;
+	transition: 0.5s;
+	transform-origin: top;
+	transform: translatey(0) rotatex(0deg);
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.but:hover:after {
+	transform: translatey(100%) rotatex(90deg);
+}
+.but1 {
+	position: absolute;
+	top:140px;
+   	left:1850px;
+	transform: translate(-50%, -50%);
+	width: 120px;
+  	height: 50px;
+	line-height: 50px; 
+	font-size: 17px;
+	text-align: center; 
+	text-decoration: none;
+	text-transform: uppercase; 
+	letter-spacing: 2px; 
+	background: white;
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+	
+}
+.but1:before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: black;
+	color: white;
+	transition: 0.5s;/* 회전 속도 */
+	transform-origin: bottom; /*회전  bottom에 붙어 회전 */
+	transform: translatey(-100%) rotatex(90deg); /* 회전 */
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.but1:hover:before {
+	transform: translatey(0) rotatex(0deg);
+}
+.but1:after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: white;
+	color: black;
+	transition: 0.5s;
+	transform-origin: top;
+	transform: translatey(0) rotatex(0deg);
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}
+.but1:hover:after {
+	transform: translatey(100%) rotatex(90deg);
+}
+.but2{
+	font-size: 30px;
+	position: absolute;
+	top: 70px;
+	left: 1700px;
+	text-decoration-line:none;
+	font-weight : bold;  굵은 굵기로 설정합니다. 
+	color:black;
+}
+.but2:hover{
+color:#00bfa5;
+}
+</style>
 </head>
 <body>
     <wrap>
@@ -53,7 +191,7 @@
 
             
            <div>
-           <a href="${root}board/list">ITEM REVIEW</a>
+           <a href="${root}board/list" class="but2">ITEM REVIEW</a>
             <a href="${root}/bankcontroller/bankform" class="but" data-text="충전하기">충전하기</a>
         <a href="${root}/bankcontroller/modal" class="but1" data-text="잔액조회">잔액조회</a>
         
