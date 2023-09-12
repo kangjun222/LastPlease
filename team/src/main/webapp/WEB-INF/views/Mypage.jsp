@@ -9,7 +9,36 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style>
+	#header{
+	width: 1920px;
+	height: 200px;
+	margin: 0 auto;
+	padding-left: 500px;
+	
+	}
 
+	.panel-body{
+		margin: 0 auto;
+		background-color: red;
+		align-items: center;
+		
+	}
+	.table table-bordered{
+		margin: 0 auto;
+
+		
+	}
+	.font{
+		text-align: center;
+		line-height: 85px;
+	}
+	th{
+	text-align: center;
+		
+	}
+	
+</style>
 <script>
 	function deletecart(idx){
 		var idxs = String(idx);
@@ -40,11 +69,19 @@
 
 </head>
 <body>
+	<div id="header">
+		<div id="logo">
+			<img src="${root}resources/img/logo.png" alt="로고이미지"  width="200px" height="200px"/>
+				 <img id="mypagelogo" src="${root}resources/img/mypage.png" alt="마이페이지이미지"/>
+		</div>
+		</div>
+
+
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<table class="table table-bordered" style="width: 700px">
+			<table class="table table-bordered" style="width: 1200px">
 				<thead>
-					<tr>
+					<tr class="font">
 						<th width="45%">상품명</th>
 						<th width="30%">상품이미지</th>
 						<th width="10%">가격</th>	
@@ -54,7 +91,7 @@
 				
 				<tbody>
 					<c:forEach items="${carts}" var="cart" varStatus="idx" >
-						<tr>
+						<tr class="font">
 							<input type="hidden" id="itemname${idx.count}" value="${cart.itemname}"/>
 							<td width="50%" >${cart.itemname}</td>
 							<td width="30%"><img src="${root}resources/upload/${cart.itemimg}" style="width: 60px"/></td>							
