@@ -66,6 +66,25 @@
 	}
 </script>
 
+<style>
+*{
+ margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   position: relative;
+  
+}
+.panel-body{
+  position:absolute;
+
+ bottom:-560px;
+     left:570px;
+     
+
+}
+
+</style>
+
 
 </head>
 <body>
@@ -78,6 +97,13 @@
 
 
 	<div class="panel panel-default">
+	
+	<table width="1920px" height="200px">
+      <td class="logo" width="200px"><a href="${root}"><img src="${root}resources/img/로고투명.png"
+      
+            alt="logo" width="200" height="200"></a></td>
+            <td calss= "COIN" height="200px" align="center"><a href="#"><h1>COIN</h1></td>
+</table>
 		<div class="panel-body">
 			<table class="table table-bordered" style="width: 1200px">
 				<thead>
