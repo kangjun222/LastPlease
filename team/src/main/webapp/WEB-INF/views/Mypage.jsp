@@ -10,33 +10,19 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style>
-	#header{
-	width: 1920px;
-	height: 200px;
-	margin: 0 auto;
-	padding-left: 500px;
-	
-	}
+*{
+ margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   position: relative;
+  
+}
 
-	.panel-body{
-		margin: 0 auto;
-		background-color: red;
-		align-items: center;
-		
-	}
-	.table table-bordered{
-		margin: 0 auto;
-
-		
-	}
-	.font{
+.font{
 		text-align: center;
 		line-height: 85px;
 	}
-	th{
-	text-align: center;
-		
-	}
+
 	
 </style>
 <script>
@@ -77,10 +63,15 @@
 .panel-body{
   position:absolute;
 
- bottom:-560px;
-     left:570px;
+ bottom:-200px;
+     left:0px;
      
 
+}
+.logo{
+position:absolute;
+  margin-left: 500px;
+  bottom:50px;
 }
 
 </style>
@@ -91,21 +82,16 @@
 	<div id="header">
 		<div id="logo">
 			<img src="${root}resources/img/logo.png" alt="로고이미지"  width="200px" height="200px"/>
-				 <img id="mypagelogo" src="${root}resources/img/mypage.png" alt="마이페이지이미지"/>
+				 <img class="logo" id="mypagelogo" src="${root}resources/img/mypage.png" alt="마이페이지이미지"/>
 		</div>
 		</div>
 
 
 	<div class="panel panel-default">
 	
-	<table width="1920px" height="200px">
-      <td class="logo" width="200px"><a href="${root}"><img src="${root}resources/img/로고투명.png"
-      
-            alt="logo" width="200" height="200"></a></td>
-            <td calss= "COIN" height="200px" align="center"><a href="#"><h1>COIN</h1></td>
-</table>
+	
 		<div class="panel-body">
-			<table class="table table-bordered" style="width: 1200px">
+			<table class="table table-bordered" style="width: 1800px">
 				<thead>
 					<tr class="font">
 						<th width="45%">상품명</th>
