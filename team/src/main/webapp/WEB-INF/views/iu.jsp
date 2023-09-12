@@ -49,7 +49,7 @@
     	<div id="allwrap">
         <header id="header">
             
-           <div><img src="${root }resources/newjins/로고투명.png" alt="?"></div> 
+           <div><a href="${root }"><img src="${root }resources/newjins/로고투명.png" alt="?"></a></div> 
            <div><img src="${root }resources/newjins/shop.png" alt="?"></div> 
 
             

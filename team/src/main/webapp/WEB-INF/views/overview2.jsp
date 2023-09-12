@@ -18,7 +18,7 @@
 	
     <wrap>
     <div id="header">
-        <a href="#"><img id="logo" src="${root}resources/img/logo.png" alt="로고이미지"/></a>
+        <a href="${root }"><img id="logo" src="${root}resources/img/logo.png" alt="로고이미지"/></a>
         <div id="overview"><h1><b>OVERVIEW / 주소</b></h1></div>
         <div>
             <ul>

@@ -14,6 +14,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
+  <style>
+  	.tittle {
+	margin-left:200px;
+}
+  </style>
+  
  <script>
  $(document).ready(function() {
 	  
@@ -67,6 +73,12 @@
   </div>
 </div>
 <div class="container">
+		<div id="header">
+			<a href="${root}"><img class="logo"
+				src="${root}resources/imteamreview/로고투명.png" alt="로고이미지" /></a> <img
+				class="tittle" src="${root}resources/imteamreview/Itemtittle.png"
+				alt="아이템리뷰글씨" /></a>
+		</div>
 <h2>H entertainment 글 수정하기</h2>
 
 <form action="update"  method="post">

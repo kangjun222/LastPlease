@@ -18,6 +18,9 @@
   	#deleteDiv{
   		display:none;
   	}
+  	.tittle {
+	margin-left:200px;
+}
   </style>
   <script type="text/javascript">
   	$(function(){
@@ -82,6 +85,12 @@ $(document).ready(function() {
 </div>
 <div class="container">
 <%--  ${vo} --%>
+		<div id="header">
+			<a href="${root}"><img class="logo"
+				src="${root}resources/imteamreview/로고투명.png" alt="로고이미지" /></a> 
+				<img class="tittle" src="${root}resources/imteamreview/Itemtittle.png"
+				alt="아이템리뷰글씨" /></a>
+		</div>
 	<h2>H entertainment 글보기</h2>
 	<table class="table">
 		<tr>
