@@ -78,24 +78,24 @@
    		}
    		
 	</style>
-		<a href="#"><img src="${root }resources/artist/공유사진.png" width="250px" height="250px" ></a>
-		<a href="#"><img src="${root }resources/artist/김선호사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/김태리사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/이도현 사진.png" width="250px"height="250px" ></a>
-		<a href="#"><img src="${root }resources/artist/한소희 사진.png" width="250px"height="250px" ></a>
-		<a href="#"><img src="${root }resources/artist/아이유사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/이광수사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/유승호사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/수지사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/천우희사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/주우재사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/기리보이사진.png" width="250px"height="250px" ></a>
-		<a href="#"><img src="${root }resources/artist/멜로망스사진.png" width="250px"height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/한혜진사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/카리나사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/악뮤사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/세븐틴사진.png" width="250px" height="250px"></a>
-		<a href="#"><img src="${root }resources/artist/뉴진스사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=공유"><img src="${root }resources/artist/공유사진.png" width="250px" height="250px" ></a>
+		<a href="${root}artist/profile?name=김선호"><img src="${root }resources/artist/김선호사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=김태리"><img src="${root }resources/artist/김태리사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=이도현"><img src="${root }resources/artist/이도현 사진.png" width="250px"height="250px" ></a>
+		<a href="${root}artist/profile?name=한소희"><img src="${root }resources/artist/한소희 사진.png" width="250px"height="250px" ></a>
+		<a href="${root}artist/profile?name=아이유"><img src="${root }resources/artist/아이유사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=이광수"><img src="${root }resources/artist/이광수사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=유승호"><img src="${root }resources/artist/유승호사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=수지"><img src="${root }resources/artist/수지사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=천우희"><img src="${root }resources/artist/천우희사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=주우재"><img src="${root }resources/artist/주우재사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=기리보이"><img src="${root }resources/artist/기리보이사진.png" width="250px"height="250px" ></a>
+		<a href="${root}artist/profile?name=멜로망스"><img src="${root }resources/artist/멜로망스사진.png" width="250px"height="250px"></a>
+		<a href="${root}artist/profile?name=한혜진"><img src="${root }resources/artist/한혜진사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=카리나"><img src="${root }resources/artist/카리나사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=악뮤"><img src="${root }resources/artist/악뮤사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=세븐틴"><img src="${root }resources/artist/세븐틴사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/profile?name=뉴진스"><img src="${root }resources/artist/뉴진스사진.png" width="250px" height="250px"></a>
 		<img class="img" src="${root }resources/artist/right.png" width="20px" height="300px" >
    		<img class="img1" src="${root }resources/artist/rightbottom.png" width="100px" height="20px" >
 	</td>

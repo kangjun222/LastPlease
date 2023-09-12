@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<title>현재시간</title>
+<title>충전하기</title>
 <style>
 
 *{
@@ -19,14 +19,17 @@
 	font-size: 20px;
 }
 .cla {
-   float: right;
+  float: right;
   position:absolute;
-   margin-left: 300px;
-  
-
+  margin-left: 300px;
   z-index:10;
   border-radius: 30px;
   
+}
+
+#coinwrap{
+	/* background-color: red; */
+	padding-top: 150px;
 }
 
 .logo{
@@ -88,13 +91,14 @@ left:300px;
 .coin{
 position:absolute;
 left:500px;
+
 }
 h1 {
-   font-size: 60px;
-    text-decoration: none;
+   font-size: 80px;
+	text-decoration-line: none; 
    color: black;
-   left:-100px;
-   decoration-line:pink
+   padding-left:-30px;
+
 }
 
 .back{
@@ -122,10 +126,10 @@ top:0px;
       <td class="logo" width="200px"><a href="${root}"><img src="${root}resources/img/로고투명.png"
       
             alt="logo" width="200" height="200"></a></td>
-            <td calss= "COIN" height="200px" align="center"><a href="#"><h1>COIN</h1></td>
+            <td calss= "COIN" height="200px" align="center"><h1>COIN</h1></td>
 </table>
 
-
+<div id="coinwrap">
 <table align="center" class="cla" width="1220" height="500" border="6" >
 
 
@@ -136,10 +140,11 @@ top:0px;
                         <input type='hidden' id="id" name="id" value="${mem.id}"/>
                          <button type="submit" class ="button">포인트 충전</button>
                         <img class="pig"src="${root}resources/junhyung/pig1.png" alt="로고이미지" / >
-                        <img class="back"src="${root}resources/junhyung/back.png" alt="로고이미지" / >
+<%--                         <img class="back"src="${root}resources/junhyung/back.png" alt="로고이미지" / > --%>
                         
                          </form>
             </table>
+            </div>
          <!--    <div id="divClock" class="clock"></div>-->
 
    

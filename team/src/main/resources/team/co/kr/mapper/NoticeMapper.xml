@@ -11,7 +11,7 @@
 					<include refid="search"/> <!--  검색을 읽어야됨 -->
 				)
 		)	
-		where rnum between 1  and 10
+		where rnum between #{startRow} and #{endRow}
 			<!-- rownum 순서대로 나온다 rnum 1번부터한다 -->
 	</select>
 	
@@ -26,29 +26,28 @@
 		<include refid="search"/> <!--  검색을 읽어야됨 -->
 	</select>
 	
-	<update id="increase">
-	 	update notice
-	 	set hit = hit +1
-	 	where bno = #{bno}
-	</update>
-	
 	<!--동적query  -->
 	<sql id="search">
 		<!--검색이 필요한경우  -->
 		<if test="word != null and word != ''">
 			where 1 = 0
 			<if test ="key.indexOf('t') >= 0">
-				or title like '%' || #{word} || '%'
+				or tittle like '%' || #{word} || '%'
 			</if>
 			<if test ="key.indexOf('c') >= 0">
-				or content like '%' || #{word} || '%'
+				or url like '%' || #{word} || '%'
 			</if>
-			<if test ="key.indexOf('w') >= 0">
-				or writer like '%' || #{word} || '%'
-			</if>
+			
 		</if>
 	
 	</sql>
+	
+	<update id="increase">
+	 	update notice
+	 	set hit = hit +1
+	 	where bno = #{bno}
+	</update>
+	
 	
 	<select id="getURLByBno" resultType="java.lang.String">
         SELECT url

@@ -2,16 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="pageNav" tagdir="/WEB-INF/tags"%>
 <!-- 날짜 숫자등 형식에 맞쳐 나오는 코드 -->
 <c:set var="root" value="${pageContext.request.contextPath}/" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>New & Notice</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="${root}resources/css/footer.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -125,7 +124,7 @@
 	      
 	        // 데이터베이스에서 해당 공지사항의 URL을 가져옴
 	        $.ajax({
-	            url: "/kr/noticecontroller/getURLByBno", // 이 URL은 컨트롤러에 추가해야 함
+	            url: "${root}noticecontroller/getURLByBno", // 이 URL은 컨트롤러에 추가해야 함
 	            type: "GET",
 	            data: { bno: bno },
 	            success: function(url) {
@@ -149,13 +148,13 @@
 		//이벤트처리
 		$(".dataRow").click(function() {
 			let bno = $(this).find(".no").text();
-			location = "view?bno=" + bno + "&inc=1"
+			location = "noticelist?bno=" + bno + "&inc=1"
 					+"&${pageObject.pageQuery}";
 		});
 		
 		$("#perPageNum").change(function(){
 			alert("페이지당 데이터의 개수를 변경했습니다.");
-			location = "list?page=1&perPageNum=" + $("#perPageNum").val()
+			location = "noticelist?page=1&perPageNum=" + $("#perPageNum").val()
 					+ "&key=${pageObject.key}&word=${pageObject.word}";
 		});//key는 유지하기위해서 = 쓰고/넘어오는 키를 쓰는건 pageObject에있는 key불러와쓰는것.
 	});
@@ -173,13 +172,12 @@
 		</div>
 		<div style="margin-bottom:10px" class="row">
 		<div id="searchDiv">
-			<form action="list" class="form-inline">
+			<form action="${root}noticecontroller/noticelist" class="form-inline">
 				<input name="page" value="1" type="hidden"/>
 				<div class="form-group">
 					<select class="form-control" id="key" name="key">
 						<option value="t">제목</option>
 						<option value="c">내용</option>
-						<option value="w">작성자</option>
 						<option value="tcw">전체</option>
 					</select>
 				</div>
@@ -207,18 +205,17 @@
 				<th>NO</th>
 			    <th>SUBJECT</th>	
 				<th>DATE</th>
-				<th>CLICK</th>
 			</tr>
 			<c:forEach items="${list }" var="vo">
-				<tr data-value="" class="dataRow">
+				<tr  class="dataRow">
 					<td class="no">${vo.bno }</td>
 					<td>${vo.tittle }</td>
 					<td><fmt:formatDate value="${vo.date3 }" pattern="yyyy-MM-dd" /></td>
 					<!--날짜 점으로나오게  value 안에용어들 -->
-					<td>${vo.hit }</td>
 				</tr>
 			</c:forEach>
 		</table>
+		<div><pageNav:pageNav listURI="noticelist" pageObject="${pageObject }"></pageNav:pageNav></div>
 
 		<div id="content">
 			<img class="img8" src="${root}resources/imteamreview/work.png"
@@ -231,11 +228,9 @@
 			<img class="img6" src="${root}resources/imteamreview/6.png" alt="한소희" />
 			<img class="img7" src="${root}resources/imteamreview/7.png" alt="뉴진스" />
 			
-			<div class="footer1">
-				<jsp:include page="/WEB-INF/views/common/footer.jsp" />
-			</div>
+		
 		</div>
-
+	
 	</div>
 
 </wrap>

@@ -244,7 +244,7 @@
 
 			<div id="newjeanswrap">
 				<div id="newjeans">
-					<a href="${root}board/list"><img src="${root}resources/img/comunewjeans.png"
+					<a href="#"><img src="${root}resources/img/comunewjeans.png"
 						alt="커뮤니티 뉴진스">
 						<h1>
 							<b>뉴진스 국내외 차트 쾌조!</b>
