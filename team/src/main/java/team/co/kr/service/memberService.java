@@ -31,6 +31,11 @@ public class memberService {
 	public int checkId(Member member) {
 		return membermapper.checkId(member);
 	}
+	
+	public Member idSearch(Member member) {
+		return membermapper.idSearch(member);
+	}
+
 	public int bank(Member member) {
 		return membermapper.bank(member);	
 	}

@@ -17,5 +17,6 @@ public interface memberMapper {
 	List<Cart> cartList(Cart cart);
 	int deletes(Cart cart);
 	int checkitemname(Cart cart);
+	Member idSearch(Member member);
 	
 }

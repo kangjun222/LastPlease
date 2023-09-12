@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -174,6 +175,27 @@ color:white;
 		
 		
 </style>
+
+<script type="text/javascript">
+	function searchId(){
+		var name = $("#name").val();
+		var phone = $("#phone").val();
+		
+		$.ajax({
+			url:"${root}member/idSearch",
+			type:"post",
+			data:{"name":name , "phone":phone},
+			dataType:"json",
+			success:function(member){
+				alert("귀하의 아이디는" + member.id + " 입니다");
+			},
+			error:function(){
+				alert('error');
+			}
+		});
+	};
+
+</script>
 </head>
 <body>
 	<wrap width="1920px" height="2100px">
@@ -184,23 +206,24 @@ color:white;
 		<td width="1720" height="200px" align="center"><a href="#"><h1>ID&PW</h1></td>
 	</table>
 	<div class="tabs">
-		<input id="all" type="radio" name="tab_item" checked> <label
-			class="tab_item" for="all">아이디찾기</label> 
-			<input id="programming" type="radio" name="tab_item"> 
+		<input id="all" type="radio" name="tab_item" checked> 
+		<label class="tab_item" for="all">아이디찾기</label> 
+		<input id="programming" type="radio" name="tab_item"> 
 			
 			
-			<label class="tab_item" for="programming">비밀번호 찾기</label>
-			 <input id="design" type="radio"name="tab_item">
+		<label class="tab_item" for="programming">비밀번호 찾기</label>
+		<input id="design"  type="radio"name="tab_item">
 			 
 			 
-			 
-		<div class="tab_content" id="all_content"><h2 class="아이디찾기">아이디 찾기</h2><br>
-		<h3 class="아이디찾기1">ID 찾기를 위한 본인확인 방법을 선택해주세요</h3><br>
-	 <p><input class="아이디" type="text" placeholder="이름" /></p>
-	 <p><input class="휴대폰번호" type="text" placeholder="휴대폰번호(-)제외" /><p>
-	 <button class="확인" type="submit">확인</button>
-		</div>
-
+		
+		
+			<div class="tab_content" id="all_content"><h2 class="아이디찾기">아이디 찾기</h2><br>
+				<h3 class="아이디찾기1">ID 찾기를 위한 본인확인 방법을 선택해주세요</h3><br>
+				 <p><input id="name" class="아이디" name="name" type="text" placeholder="이름" /></p>
+				 <p><input id="phone" class="휴대폰번호" name="phone" type="text" placeholder="휴대폰번호(-)제외" /><p>
+				 <button class="확인" type="button" onclick="searchId();">확인</button>
+			</div>
+		
   <div class="tab_content" id="programming_content">
   <h2 class="비밀번호찾기">비밀번호 찾기</h2><br>
   <h3 class="비밀번호찾기1">비밀번호 찾기를 위한 이름&ID를 입력해주세요</h3><br>

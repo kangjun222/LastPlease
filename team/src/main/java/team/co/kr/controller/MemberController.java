@@ -83,6 +83,16 @@ public class MemberController {
 		return memberservice.checkId(member);
 	}
 	
+	
+	@ResponseBody
+	@PostMapping("/idSearch")
+	public Member idSearch(Member member , Model model) {
+	
+		Member searchMember =  memberservice.idSearch(member);
+		
+		return searchMember;
+	}
+	
 	@ResponseBody
 	@GetMapping(value="/addCart",produces="application/text;charset=UTF-8")
 	public String addCart(Cart cart, Model model) {
