@@ -9,6 +9,10 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+	integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
 *{
  margin: 0;
@@ -73,6 +77,13 @@ position:absolute;
   margin-left: 500px;
   bottom:50px;
 }
+#fontfont{
+	padding-left: 1800px;
+	font-size: 30px;
+	color:black;
+	
+	
+}
 
 </style>
 
@@ -84,6 +95,16 @@ position:absolute;
 			<img src="${root}resources/img/logo.png" alt="로고이미지"  width="200px" height="200px"/>
 				 <img class="logo" id="mypagelogo" src="${root}resources/img/mypage.png" alt="마이페이지이미지"/>
 		</div>
+		<c:if test="${!empty mem}">
+			
+							<li>
+								<a href="${root}member/gojoin">
+									<div id="fontfont"><i class="fa-solid fa-user">${mem.id}님</i></div>
+								</a>
+							</li>
+							
+						</c:if>
+		
 		</div>
 
 
