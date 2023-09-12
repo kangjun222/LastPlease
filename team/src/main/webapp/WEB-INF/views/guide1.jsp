@@ -7,59 +7,48 @@
 <head>
 <meta charset="UTF-8">
 <title>지원안내</title>
+</head>
 <style>
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   position: relative;
+}
+
 .AUD{
 font-size:70px;
 position: absolute;
-   top: 20px;
-   left: 830px;
+   top: -50px;
+   left: -150px;
+   color:black;
+   width:400px;
 
+}
+.cla {
+   float: right;
+   position: absolute;
+   margin-left: 300px;
 }
 .지원안내{
-position: absolute;
-   bottom: 800px;
-   left:260px;
-   font-size:15px
-}
-
-.line1{
-   border: 0.05px solid black;
-   width: 370px;
-   position: absolute;
-   bottom: 890px;
-   left: 820px;
-
-}
-.line2{  
-   border: 0.05px solid black;
-   width: 370px;
-   position: absolute;
-   bottom: 890px;
-   left: 820px;
-
+ position: absolute;
+ margin-left: 190px;
 }
 .지원안내1{
     position: absolute;
-     bottom: 540px;
-   left: 30px;
+     bottom: 180px;
+   left: 0px;
    display:block;
    font-size:40px;
    color:black;
    text-decoration:none;
 
 }
-.지원안내선{
-     border: 0.05px solid black;
-   width: 210px;
-   position: absolute;
-   bottom: 530px;
-   left: 20px;
-
-}
 .지원하기{
     position: absolute;
-     bottom: 240px;
-   left: 30px;
+     bottom: -200px;
+   left: 0px;
    display:block;
    font-size:40px;
    color:gray;
@@ -74,50 +63,49 @@ position: absolute;
 .지원하기:hover{
 color:black;
 }
-.지원안내선1{
+.지원안내선{
      border: 0.05px solid black;
-   width: 210px;
+   width: 180px;
    position: absolute;
-   bottom: 230px;
-   left: 20px;
+   bottom: 184px;
+   left: 0px;
 
 }
-.home{
-position: absolute;
-   bottom: 810px;
-   left:1810px;
-   font-size:15px;
-   text-decoration:none;
-   color:black;
+.지원안내선1{
+     border: 0.05px solid black;
+   width: 180px;
+   position: absolute;
+   bottom: -194px;
+   left: 0px;
 
 }
 .모집분야{
+
 position: absolute;
-   bottom: 410px;
+   bottom: -80px;
    left: 400px;
    font-size:30px;
-
-
 }
+
 .모집분야1{
 position: absolute;
-   bottom: 373px;
-   left: 412px;
-   font-size:18px;
-
-
+ bottom: -120px;
+left: 425px;
+ font-size:18px;
 }
+
 .지원방법{
 position: absolute;
-   bottom: 410px;
+   bottom: -80px;
    left: 1200px;
    font-size:30px
    
 
 }
+
 .지원방법1{
 position: absolute;
-   bottom: 375px;
+   bottom: -110px;
    left: 1200px;
    font-size:17px;
 
@@ -125,39 +113,39 @@ position: absolute;
 }
 .첨부파일{
 position: absolute;
-   bottom: 358px;
+   bottom: -133px;
    left: 1200px;
    font-size:15px;
 }
 .첨부파일1{
 position: absolute;
-   bottom: 322px;
+   bottom: -167px;
    left: 1200px;
    font-size:15px;
 }
 .모집절차{
 position: absolute;
-   bottom: 245px;
+   bottom: -240px;
    left: 400px;
       font-size:30px;
 
 }
 .모집절차1{
 position: absolute;
-   bottom: 210px;
+   bottom: -266px;
    left: 400px;
    font-size:18px;
 }
 .모집절차2{
 position: absolute;
-   bottom: 180px;
+   bottom: -290px;
    left: 400px;
    font-size:18px;
 }
 .유의사항{
 
 position: absolute;
-   bottom: 245px;
+   bottom: -240px;
    left: 1200px;
    font-size:30px;
    
@@ -165,131 +153,93 @@ position: absolute;
 }
 .포토샵{
   position: absolute;
-   bottom: 210px;
-   left: 1206px;
+   bottom: -265px;
+   left: 1200px;
    font-size:18px;
 }
 .포토샵1{
   position: absolute;
-   bottom: 180px;
-   left: 1206px;
+   bottom: -289px;
+   left: 1200px;
    font-size:18px;
-
-}
-.포토샵2{
- position: absolute;
-   bottom: 160px;
-   left: 1206px;
-   font-size:18px;
-
-}
-.line111{
-   border: 0.05px solid black;
-   width: 160px;
-   position: absolute;
-   bottom: 260px;
-   left: 409px;
-
-}
-
-.line1111{
-   border: 0.05px solid black;
-   width: 160px;
-   position: absolute;
-   bottom: 260px;
-   left: 1210px;
-
-}
-.line22{
-   border: 0.05px solid black;
-   width: 160px;
-   position: absolute;
-   bottom: 425px;
-   left: 1210px;
-
-}
-.line222{
-   border: 0.05px solid black;
-   width: 160px;
-   position: absolute;
-   bottom: 425px;
-   left: 409px;
 
 }
 .button{
 position: absolute;
-   bottom: 30px;
+   bottom:-400px;
    left: 885px;
    width: 200px;
    height: 45px;
    font-weight: bold;
    font-size: 20px;
    background-color:#8ABFDC;
-   border-radius: 6%
+   border-radius: 6%;
 }
 
 
 
-
-
 </style>
-<table width="1920px" height="200px">
-   <td width="200px" height="200px"><a href="${root}"><img src="${root}resources/img/logo.png" alt="logo" width="200" height="200"></a></td>
-   <td width="1720px" align="center">
-   <h1 class="AUD">AUDITION</h1>
-   <div class="line1"></div>
+<body>
+<wrap width="1920px" height="2100px">
 
+   <table width="1920px" height="200px">
+      <td width="200px"><a href="${root}"><img src="${root}resources/img/logo.png"
+            alt="logo" width="200" height="200"></a></td>
+      <td width="1720" height="200px" align="center"><a href="#"><h1 class="AUD">AUDITION</h1></td>
+   </table>
+   <table>
+   <h2 class="지원안내">지원안내</h2>
+      <td><img src="${root }resources/guide11/new1.png"
+      style="width:1600px; height:300px;margin-left: 200px; margin-top:40px;">
+      </td>
+  
+</table>
+<table>
+<a class="지원안내1" href='#' target='_blank' > 지원 안내 </a>
+<div class="지원안내선"></div>
+
+ <a class="지원하기" href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank' > 지원 하기 </a>
+   <div class="지원안내선1"></div>
 </table>
 
-
-</head>
-<body>
-
-<center>
-<tr>
-<img src="${root }resources/guide11/new1.png"
-   style="width: 1600px; height:300px; margin-left: 200px; margin-top:40px;">
-   <h2 class="지원안내"></h2>
+<table>
+<h3 class="모집분야">★모집분야★</h3>
+ <h3 class="모집분야1">랩/외모/노래</h3>
+ 
+ <h3 class="지원방법">★지원방법★</h3>  
+<h3 class="지원방법1">하단의 지원하기 버튼 클릭 후 지원서 작성</h3>
+<h3 class=첨부파일>필수첨부 파일</h3>
+<h3 class="첨부파일1">1)사진첨부</br>2)자기소개</h3>
+<h3 class="모집절차">★모집절차★</h3>
+ <h3 class="모집절차1">홈페이지 및 우편접수->1차 합격자 개별공지->최종 오디션</h3>
+   <h3 class="모집절차2">우편 접수 주소 : 06070 서울시 구로구 146 하이미디어앞</h3>
+      <h3 class="유의사항">★유의사항★</h3>
+       <h3 class="포토샵">포토샵&필터 등으로 수정 처리 혹은 정면이 아닌 사진은1차심사 제외</h3>
+   <h3 class="포토샵1">사진은 300* 350픽셀을 맞춰주세요 </h3>
    
-   <a class="지원안내1" href='https://naver.com' target='_blank' > 지원 안내 </a>
-   <div class="지원안내선"></div>
-   </tr>
-   <a class="home" href='#' target='_blank' > Home </a>
-   <tr>
-   <a class="지원하기" href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank' > 지원 하기 </a>
-   <div class="지원안내선1"></div>
-   </tr>
-   <tr>
-   <h3 class="모집분야">★모집분야★</h3>
-   <h3 class="모집분야1">랩/외모/노래</h3>
-   <h3 class="지원방법">★지원방법★</h3>
-   <h3 class="지원방법1">하단의 지원하기 버튼 클릭 후 지원서 작성</h3>
-   <h3 class=첨부파일>-필수첨부 파일</h3>
-   <h3 class="첨부파일1">1)사진첨부</br>2)자기소개</h3>
-   <h3 class="모집절차">★모집절차★</h3>
-   <h3 class="모집절차1">홈페이지 및 우편접수->1차 합격자 개별공지->최종 오디션</h3>
-   <h3 class="모집절차2">우편 접수 주소 : 06070 서울시 강남구 삼성로146길 4-5 스타쉽ENT 신인개발팀 앞</h3>
-   <h3 class="유의사항">★유의사항★</h3>
-   <h3 class="포토샵">포토샵&필터 등으로 수정 처리 혹은 정면이 아닌 사진은1차심사 제외</h3>
-   <h3 class="포토샵1">포커스가 맞지 않은 동영상 파일, 음질이 불량한 음성 및 동영상 파일은 심사에 불이익이</h3>
-   <h3 class="포토샵2">있을 수 있습니다</h3>
-   <div class="line111"></div>
-   <div class="line1111"></div>
-   <div class="line22"></div>
-   <div class="line222"></div>
-   </tr>
-   
-   <tr height="100">
-   <td class="버튼">
+     <td class="버튼">
       <a href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank'> <button class="button">지원하기</button> </a>
    
    </td>
    
-   </tr>
-   
 
+</table>
 
-</center>
 
 </body>
 </html>
+<%-- <tr>  <img src="${root }resources/guide11/new1.png"</tr>
+
+   <a class="지원안내1" href='https://naver.com' target='_blank' > 지원 안내 </a>
+
+   <a class="지원하기" href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank' > 지원 하기 </a>
+
+
+      <a href='http://localhost:8080/kr/maincontroller/guidedo' target='_blank'> <button class="button">지원하기</button> </a>
+.AUD{
+font-size:70px;
+position: absolute;
+   top: 20px;
+   left: 830px;
+
+} --%>
