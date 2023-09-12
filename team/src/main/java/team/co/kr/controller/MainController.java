@@ -42,6 +42,14 @@ public class MainController {
 	public String idfind() {
 		return "findidpw";
 	}
+	@GetMapping("/intro1")
+	public String intro1() {
+		return "/common/intro";
+	}
+	@GetMapping("/use1")
+	public String use1() {
+		return "/common/use1";
+	}
 
 
 }
