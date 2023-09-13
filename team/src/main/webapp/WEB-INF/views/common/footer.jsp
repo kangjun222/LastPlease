@@ -55,10 +55,8 @@
 			height="20px" /></a>
 	</div>
 	<div class="wraptext">
-		<a class="a2" href="javascript:void(0);"
-			onclick="window.open('${root}maincontroller/intro1');">개인정보처리방침</a> <a
-			class="a3 " href="javascript:void(0);"
-			onclick="window.open('${root}maincontroller/use1">이용약관</a>
+		<a class="a2" href="javascript:void(0);" onclick="window.open('${root}maincontroller/intro1');">개인정보처리방침</a> 
+		<a class="a3 " href="javascript:void(0);" onclick="window.open('${root}maincontroller/use1">이용약관</a>
 	</div>
 </div></body>
 </html>
