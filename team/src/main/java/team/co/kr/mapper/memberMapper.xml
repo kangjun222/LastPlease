@@ -44,7 +44,7 @@
 	
 	 <select id="print" parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Member">
 	select bank from member
-	where id={id}
+	where id=#{id}
 	</select>
 	
 	<insert id="addCart" parameterType="team.co.kr.entity.Cart">

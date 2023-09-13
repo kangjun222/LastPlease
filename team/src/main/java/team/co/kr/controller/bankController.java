@@ -35,6 +35,7 @@ public class bankController{
 		memberservice.bank(member);
 		member.setBank(bank);
 		/* session.invalidate(); */
+		session.setAttribute("bank", bank);
 		model.addAttribute("msg","돈 충전이 완료 되었습니다");
 		
 		
