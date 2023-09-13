@@ -127,7 +127,7 @@ bottom:-800px;
   
  
 </p>
-<div class="print" id="print" >${mem.bank} POINT</div>
+<div class="print" id="print" >${mem.bank+bank} POINT</div>
   
  </form>
 </table>
