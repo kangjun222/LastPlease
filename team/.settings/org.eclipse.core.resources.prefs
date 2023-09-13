@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/main/java/team/co/kr/controller/BoardController.java=UTF-8
 encoding//src/main/java/team/co/kr/controller/MemberController.java=UTF-8
 encoding//src/main/java/team/co/kr/controller/NoticeController.java=UTF-8
+encoding//src/main/java/team/co/kr/controller/bankController.java=UTF-8
 encoding//src/main/java/team/co/kr/entity/BoardVO.java=UTF-8
 encoding//src/main/java/team/co/kr/mapper/BoardMapper.java=UTF-8
 encoding//src/main/java/team/co/kr/service/BoardServiceImpl.java=UTF-8

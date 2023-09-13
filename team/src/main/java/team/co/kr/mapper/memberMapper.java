@@ -18,5 +18,6 @@ public interface memberMapper {
 	int deletes(Cart cart);
 	int checkitemname(Cart cart);
 	Member idSearch(Member member);
+	Member pointCheck(Member member);
 	
 }

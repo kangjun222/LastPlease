@@ -53,6 +53,10 @@ public class memberService {
 	public int checkitemname(Cart cart) {
 		return membermapper.checkitemname(cart);
 	}
+	
+	public Member pointCheck(Member member) {
+		return membermapper.pointCheck(member);
+	}
 
 }
 

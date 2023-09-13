@@ -68,7 +68,14 @@
     
      width:200px;
 }
-
+#back{
+ position:absolute;
+ bottom:-450px;
+ left:550px;
+ z-index:11;
+ font-size:40px;
+ font-weight: bolder;
+}
 .button{
 position:absolute;
    bottom:-220px;
@@ -114,6 +121,13 @@ top:0px;
 }
 
 </style>
+
+<script type="text/javascript">
+	function back(){
+		history.back();
+	}
+
+</script>
 </head>
 
 
@@ -135,6 +149,7 @@ top:0px;
 
 
          <form method="get" action="${root}bankcontroller/bank">
+         				<a href="javascript:back();" id="back">쇼핑하러가기</a>
                          <label  class="충전하기1" for="name">H머니</label><br/>
                         <input class="충전하기" type="text" id="bank" name="bank" placeholder="충전하기" /> 
                         <input type='hidden' id="id" name="id" value="${mem.id}"/>

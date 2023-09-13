@@ -42,7 +42,7 @@
 	where id=#{id}
 	</update>
 	
-	 <select id="print" parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Member">
+	 <select id="pointCheck" parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Member">
 	select bank from member
 	where id=#{id}
 	</select>

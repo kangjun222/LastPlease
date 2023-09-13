@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import team.co.kr.entity.Member;
 import team.co.kr.service.memberService;
@@ -28,15 +27,13 @@ public class bankController{
 	@GetMapping("/bank")
 	public String BANK(Member member , String id,int bank,Model model, HttpSession session) {
 		
-		System.out.println(id);
 		member.setId(id);
-		System.out.println(member);
-		System.out.println("================");
 		memberservice.bank(member);
 		member.setBank(bank);
+		
 		/* session.invalidate(); */
 		session.setAttribute("bank", bank);
-		model.addAttribute("msg","돈 충전이 완료 되었습니다");
+		model.addAttribute("msg","충전이 완료되었습니다.");
 		
 		
 		return "bank"; 
@@ -45,18 +42,17 @@ public class bankController{
 
 	
 	@GetMapping("bankform")
-	public String bankform() {
-		
-		
-		
-		
+	public String bankform(Member member) {	
 		return "bank";
 	}
+	
 	@GetMapping("modal")
-	public String modal() {
+	public String modal(Member member , Model model) {
+		Member pointMember = memberservice.pointCheck(member);
+		
+		model.addAttribute("pointMember", pointMember);
 		
 		return "modal";
-
 }
 
 }

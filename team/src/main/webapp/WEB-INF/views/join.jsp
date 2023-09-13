@@ -136,7 +136,6 @@
    			}
    			else{
    			 $(".id_ok").html("");
-   			 	return true;
    			}
    			
    			
