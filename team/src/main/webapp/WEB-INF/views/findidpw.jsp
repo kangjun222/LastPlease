@@ -190,10 +190,31 @@ color:white;
 				alert("귀하의 아이디는" + member.id + " 입니다");
 			},
 			error:function(){
-				alert('error');
+				alert('이름과 휴대폰번호를 올바르게 입력해주세요');
 			}
 		});
 	};
+	
+	function searchpwd(){
+		var name = $("#name1").val();
+		var id = $("#id").val();
+		
+		$.ajax({
+			url:"${root}member/pwdSearch",
+			type:"post",
+			data:{"name":name , "id":id},
+			dataType:"json",
+			success:function(member){
+				alert("귀하의 비밀번호는" + member.pwd + " 입니다");
+			},
+			error:function(){
+				alert('이름과 휴대폰번호를 올바르게 입력해주세요');
+			}
+		});
+	};
+	
+
+	
 
 </script>
 </head>
@@ -218,20 +239,20 @@ color:white;
 		
 		
 			<div class="tab_content" id="all_content"><h2 class="아이디찾기">아이디 찾기</h2><br>
-				<h3 class="아이디찾기1">ID 찾기를 위한 본인확인 방법을 선택해주세요</h3><br>
-				 <p><input id="name" class="아이디" name="name" type="text" placeholder="이름" /></p>
+				<h3 class="아이디찾기1">ID 찾기를 위한 이름&휴대폰번호를 입력해주세요</h3><br>
+				 <p><input id="name" class="아이디" name="name" type="text" placeholder="이름을 입력해주세요" /></p>
 				 <p><input id="phone" class="휴대폰번호" name="phone" type="text" placeholder="휴대폰번호(-)제외" /><p>
 				 <button class="확인" type="button" onclick="searchId();">확인</button>
 			</div>
 		
-  <div class="tab_content" id="programming_content">
-  <h2 class="비밀번호찾기">비밀번호 찾기</h2><br>
-  <h3 class="비밀번호찾기1">비밀번호 찾기를 위한 이름&ID를 입력해주세요</h3><br>
-   <p><input class="이름" type="text" placeholder="이름" /></p>
-   <p><input class="이름아이디" type="text" placeholder="ID" /><p>
-   <button class="확인1" type="submit">확인</button>
+  <div class="tab_content" id="programming_content"><h2 class="비밀번호찾기">비밀번호 찾기</h2><br>
+  		<h3 class="비밀번호찾기1">비밀번호 찾기를 위한 이름&ID를 입력해주세요</h3><br>
+     		<p><input id="name1" class="아이디" name="name" type="text" placeholder="이름을 입력해주세요" /></p>
+     		<p><input id="id" class="이름아이디" name="id" type="text" placeholder="id를 입력해주세요" /></p>
+  			 <button class="확인" type="button" onclick="searchpwd();">확인</button>
+   
   </div>
-  
+  <!--이름아이디  -->
   <footer class="footer">
   		<div class="wrap">
 		<img src="img/footer.png" alt=""/>

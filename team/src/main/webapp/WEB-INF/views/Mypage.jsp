@@ -47,12 +47,16 @@
 			error:function(){
 				alert('error');	
 			}
-		});
-		
-		
+		});		
+	}
 	
+	function buyItem(){
+		// 가격 이름 아이디
+		var itemprice = $("#itemprice").val();
+		var itemname = $("#itemname").val();
+		var id = $("#id").val();
 		
-		
+
 	}
 </script>
 
@@ -67,7 +71,7 @@
 .panel-body{
   position:absolute;
 
- bottom:-200px;
+ bottom:-430px;
      left:0px;
      
 
@@ -86,7 +90,6 @@ position:absolute;
 }
 
 </style>
-
 
 </head>
 <body>
@@ -126,10 +129,23 @@ position:absolute;
 					<c:forEach items="${carts}" var="cart" varStatus="idx" >
 						<tr class="font">
 							<input type="hidden" id="itemname${idx.count}" value="${cart.itemname}"/>
-							<td width="50%" >${cart.itemname}</td>
+							<td width="50%" ><a href="">${cart.itemname}</a></td>
 							<td width="30%"><img src="${root}resources/upload/${cart.itemimg}" style="width: 60px"/></td>							
 							<td width="10%" id="itemprice">${cart.itemprice}</td>
-							<td width="10%"><button type="button" class="btn btn-warning" onclick="deletecart(${idx.count});">삭제</button></th>							
+							<td width="10%">
+								<form action="${root}item/gosellItem" method="post">
+									<button type="button" class="btn btn-warning" onclick="deletecart(${idx.count});">삭제</button>
+									
+									<input type="hidden" name="id" id="id" value="${mem.id}"/>
+									<input type="hidden" name="itemname" id="itemname" value="${cart.itemname}"/>
+									<input type="hidden" name="itemprice" id="itemprice" value="${cart.itemprice}"/>
+									
+									<button type="submit" class="btn btn-primary">구매</button>
+								</form>
+							</td>
+							
+							
+							</th>							
 						</tr>
 						
 					</c:forEach>

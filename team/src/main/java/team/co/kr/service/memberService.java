@@ -35,6 +35,9 @@ public class memberService {
 	public Member idSearch(Member member) {
 		return membermapper.idSearch(member);
 	}
+	public Member pwdSearch(Member member) {
+		return membermapper.pwdSearch(member);
+	}
 
 	public int bank(Member member) {
 		return membermapper.bank(member);	

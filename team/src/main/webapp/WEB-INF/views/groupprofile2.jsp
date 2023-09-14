@@ -13,7 +13,7 @@
 		<td width="200px" ><a href="${root}"><img
 				src="${root}resources/img/logo.png" alt="logo" width="200" height="200"></a></td>
 		<td width="1720px"  height="200px"align="center"><a href="#"><img
-				src="${root}resources/artist/artist.png" alt="artistlogo" width="430px" height="82px"></a>
+				src="${root }resources/img/art.png" alt="artistlogo" width="430px" height="82px"></a>
 		</td>
 	</table>
 	

@@ -31,6 +31,10 @@
 		select * from member where name = #{name} and phone = #{phone}
 	</select>
 	
+	<select id="pwdSearch" parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Member">
+		select * from member where name = #{name} and id = #{id}
+	</select>
+	
 	<update id="bank" parameterType="team.co.kr.entity.Member">
 	<selectKey keyProperty="bank" resultType="team.co.kr.entity.Member" order="AFTER">
 	SELECT bank

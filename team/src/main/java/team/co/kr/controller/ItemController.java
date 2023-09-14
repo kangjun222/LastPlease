@@ -54,7 +54,11 @@ public class ItemController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String msg = "";
 		
-		
+		if(member.getId() == null || member.getId().equals("")) {
+			msg = "로그인후 이용해 주세요";
+			model.addAttribute("msg", msg);
+			return "main";
+		}
 		
 		map.put("item", item);
 		map.put("member", member);	

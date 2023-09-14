@@ -94,6 +94,16 @@ public class MemberController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/pwdSearch")
+	public Member pwdSearch(Member member , Model model) {
+		
+		System.out.println(member);
+		Member searchMember =  memberservice.pwdSearch(member);
+		
+		return searchMember;
+	}
+	
+	@ResponseBody
 	@GetMapping(value="/addCart",produces="application/text;charset=UTF-8")
 	public String addCart(Cart cart, Model model) {
 		

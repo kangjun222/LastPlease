@@ -136,6 +136,7 @@
    			}
    			else{
    			 $(".id_ok").html("");
+   			 	 /* return true; */
    			}
    			
    			
@@ -163,11 +164,11 @@
    		}
    		
    		function submitCheck(){
-   			if(checkName()== true 
-   					&& checkId()== true
-   					&& checkpwd()==true
-   					&& checkEmail()==true 
-   					&& checkphone()==true 
+   			if(checkName()!= false
+   					&& checkId()!= false  
+   					&& checkpwd()!= false 
+   					&& checkEmail()!= false  
+   					&& checkphone()!= false   
    					
    					){
    				
@@ -181,7 +182,7 @@
    						location.href='${root}?msg=회원가입이완료되었습니다.'
    					},
    					error:function(){
-   						alert("joinerror");
+   						alert("회원가입 형식을 다시 확인해주세요error");
    					}
    				});
    					
@@ -236,7 +237,7 @@
                         
                         
                         <label for="pwd1">비밀번호 확인</label><br/>
-                        <input type="password" id="pwd1" onblur="checkpwd();"  placeholder="숫자, 영문, 특수문자 포함 8자 이상" />
+                        <input type="pwd1" id="pwd1" onblur="checkpwd();"  placeholder="숫자, 영문, 특수문자 포함 8자 이상" />
                         <br/>
                        
                         <div>

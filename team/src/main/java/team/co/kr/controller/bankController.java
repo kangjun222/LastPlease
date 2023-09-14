@@ -42,17 +42,32 @@ public class bankController{
 
 	
 	@GetMapping("bankform")
-	public String bankform(Member member) {	
+	public String bankform(Member member, Model model) {	
+		if(member.getId() == null || member.getId().equals("")) {
+			String msg = "";
+			msg = "로그인후 이용해 주세요";
+			model.addAttribute("msg", msg);
+			return "main";
+		}
+		
 		return "bank";
 	}
 	
 	@GetMapping("modal")
 	public String modal(Member member , Model model) {
-		Member pointMember = memberservice.pointCheck(member);
 		
-		model.addAttribute("pointMember", pointMember);
+		if(member.getId() == null || member.getId().equals("")) {
+			String msg = "";
+			msg = "로그인후 이용해 주세요";
+			model.addAttribute("msg", msg);
+			return "main";
+		}
+		else
+			{Member pointMember = memberservice.pointCheck(member);
 		
-		return "modal";
+			model.addAttribute("pointMember", pointMember);
+		
+			return "modal";}
 }
 
 }
