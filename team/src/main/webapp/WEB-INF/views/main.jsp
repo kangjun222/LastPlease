@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="${root}resources/css/main.css" />
 <link rel="stylesheet" href="${root}resources/css/reset.css" />
-<title>Document</title>
+<title>Hentertainment</title>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
 	integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
@@ -124,7 +124,7 @@
 					</div></li>
 				<li><a href="${root}maincontroller/artistcontrollermain"><h1><b>ARTIST</h1></b></a></li>
 				<li><a href="${root}maincontroller/gostore"><h1><b>STORE</h1></b></a></li>
-				<li><a href="${root}noticecontroller/noticelist"><h1><b>NEW & NOTICE</h1></b></a></li>
+				<li><a href="${root}noticecontroller/noticelist"><h1><b>NEWS & NOTICE</h1></b></a></li>
 				
 				<li>
 				<a href="javascript:Auditionmenu();"><h1><b>AUDITION</h1></b></a>

@@ -79,7 +79,7 @@ color:#00bfa5;
             
            <div>
              <a href="${root}board/list" class="but2">ITEM REVIEW</a>
-            <a href="${root}/bankcontroller/bankform" class="but1" data-text="충전하기">충전하기💰</a>
+            <a href="${root}/bankcontroller/bankform?id=${mem.id}" class="but1" data-text="충전하기">충전하기💰</a>
         <a href="${root}/bankcontroller/modal?id=${mem.id}" class="but1" data-text="잔액조회">잔액조회💰</a>
         
            </div>
