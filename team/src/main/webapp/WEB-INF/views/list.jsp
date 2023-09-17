@@ -37,9 +37,9 @@
 .tittle {
 	width: 500px;
 	height: 80px;
-	position: absolute;
-	top: 60px;
-	left: 740px;
+	position: relative;
+	top: 10px;
+	left: 190px;
 }
 .color{
 	background-color:#F5F5F5;

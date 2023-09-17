@@ -77,7 +77,11 @@
 	
 	<select id ="checkitemname" parameterType="team.co.kr.entity.Cart" resultType="int">
 		select count(*) from cart
-		where itemname=#{itemname}
+		where itemname=#{itemname} and id = #{id}
+	</select>
+	
+	<select id="mypass" parameterType="team.co.kr.entity.Member" resultType="team.co.kr.entity.Audition">
+		select * from audition where id= #{id}
 	</select>
 </mapper>
 

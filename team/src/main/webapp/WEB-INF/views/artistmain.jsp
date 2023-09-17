@@ -90,12 +90,12 @@
 		<a href="${root}artist/profile?name=천우희"><img src="${root }resources/artist/천우희사진.png" width="250px" height="250px"></a>
 		<a href="${root}artist/profile?name=주우재"><img src="${root }resources/artist/주우재사진.png" width="250px" height="250px"></a>
 		<a href="${root}artist/profile?name=기리보이"><img src="${root }resources/artist/기리보이사진.png" width="250px"height="250px" ></a>
-		<a href="${root}artist/profile?name=멜로망스"><img src="${root }resources/artist/멜로망스사진.png" width="250px"height="250px"></a>
+		<a href="${root}artist/gproprofile?name=멜로망스"><img src="${root }resources/artist/멜로망스사진.png" width="250px"height="250px"></a>
 		<a href="${root}artist/profile?name=한혜진"><img src="${root }resources/artist/한혜진사진.png" width="250px" height="250px"></a>
 		<a href="${root}artist/profile?name=카리나"><img src="${root }resources/artist/카리나사진.png" width="250px" height="250px"></a>
-		<a href="${root}artist/profile?name=악뮤"><img src="${root }resources/artist/악뮤사진.png" width="250px" height="250px"></a>
-		<a href="${root}artist/profile?name=세븐틴"><img src="${root }resources/artist/세븐틴사진.png" width="250px" height="250px"></a>
-		<a href="${root}artist/profile?name=뉴진스"><img src="${root }resources/artist/뉴진스사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/gpropprofile?name=악뮤"><img src="${root }resources/artist/악뮤사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/gproopprofile?name=세븐틴"><img src="${root }resources/artist/세븐틴사진.png" width="250px" height="250px"></a>
+		<a href="${root}artist/gproprofile?name=뉴진스"><img src="${root }resources/artist/뉴진스사진.png" width="250px" height="250px"></a>
 		<img class="img" src="${root }resources/artist/right.png" width="20px" height="300px" >
    		<img class="img1" src="${root }resources/artist/rightbottom.png" width="100px" height="20px" >
 	</td>

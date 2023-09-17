@@ -247,58 +247,12 @@ left:80px;
 
 <script type="text/javascript">
 
-function itemsubmit(){
-	
-	var formData = new FormData();
-	formData.append('itemimg',$("input[name=img1]")[0].files[0]); //formData변수에 이미지정보저장  	
-	//formdata 객체에는 이미지에대한 데이터가 들어가있다.
-	
-	//resources/upload 폴더에 이미지 업로드시키는 부분
-	$.ajax({
-		url:"${root}audition/uploadimg",
-		type:"post",
-		data: formData,
-		processData:false,
-		contentType:false,
-		success:function(data){
-			
-			
-			var id = $("#id").val();
-			var JIWON = $("#JIWON").val();
-			var NAME= $("#NAME").val();
-			var PONE=$("#PONE").val();
-			var ADDRESS = $("#ADDRESS").val();		
-			var EMAIL = $("#EMAIL").val();
-			var HEELO = $("#HEELO").val();
-			var img1 = data;
-			
-			//데이터베이스에 item insert 시키는부분
-			$.ajax({
-				url:"${root}audition/guide2",
-				type:"post",
-				data:{"JIWON":JIWON,
-					  "NAME":NAME,
-					  "PONE":PONE,
-					  "ADDRESS":ADDRESS,
-					  "EMAIL":EMAIL,
-					  "HEELO":HEELO,
-					  "img1":img1,
-					  "id":id
-					  }, 
-				success:function(){
-					location.href="${root}maincontroller/guidedo?msg=지원 완료되었습니다.";
-				},
-				error:function(){
-					alert("erorr");	
-				}
-				
-			});
-		},
-		error:function(){
-			alert("실패");
-		}
-	});
-}
+$(document).ready(function(){
+	if(${!empty msg}){
+		alert('${msg}');
+	}
+});
+
 
 </script>
 <body>
@@ -317,25 +271,23 @@ function itemsubmit(){
          
          <hr class="line" style="border: solid 2px black;"> 
          <form method="post" action="${root}audition/guide2">
-         <input type="hidden" id="id" name="id" value="${mem.id}">
-         <input class="input" type="text" id="JIWON" name="JIWON" placeholder="지원분야:(랩,외모,노래)" />
-          <input class="input1" type="text" id="NAME" name="NAME" placeholder="이름:" value="${mem.name}"  readonly="readonly"/>
-          <input class="input2" type="text" id="PONE" name="PONE"  placeholder="핸드폰번호:" value="${mem.phone}"  readonly="readonly"/>
-          <input class="input3" type="text" id="ADDRESS" name="ADDRESS" placeholder="주소:"  value="${mem.addr}" readonly="readonly"/>
-          <input class="input4" type="text" id="EMAIL" name="EMAIL" placeholder="E-Mail:" value="${mem.email}" readonly="readonly"/>
+         <input type="hidden" id="id" name="id" value="${detailAudition.id}">
+         <input class="input" type="text" id="JIWON" name="JIWON" value="${detailAudition.JIWON}" />
+          <input class="input1" type="text" id="NAME" name="NAME" placeholder="이름:" value="${detailAudition.NAME}"  readonly="readonly"/>
+          <input class="input2" type="text" id="PONE" name="PONE"  placeholder="핸드폰번호:" value="${detailAudition.PONE}"  readonly="readonly"/>
+          <input class="input3" type="text" id="ADDRESS" name="ADDRESS" placeholder="주소:"  value="${detailAudition.ADDRESS}" readonly="readonly"/>
+          <input class="input4" type="text" id="EMAIL" name="EMAIL" placeholder="E-Mail:" value="${detailAudition.EMAIL}" readonly="readonly"/>
           <img class="수지" src="${root}resources/guide11/mini.png" style="width: 400px;">
          <div class="file-upload preview-image">
-         <textarea id="HEELO" name="HEELO" class="memo"></textarea>
+        
+         <textarea id="HEELO" name="HEELO" class="memo">${detailAudition.HEELO}</textarea>
           
          <input type="text" class="upload-name" value="" disabled="disabled">
 
           <!--    <input class="upload-name" type="file" id="input-file"
                class="upload-hidden">
-               -->
-                <input class="type" type='file' id="img1" name="img1"/> 
-                <img class="type2" id="img"   src="#" alt="" width="300px" />
-                <button type="button" class="button" onclick="itemsubmit();">지원하기</button> 
-               
+               --> 
+                <img class="type2" id="img"  src="${root}resources/upload/${detailAudition.img1}" alt="" width="300px" />               
          </div>
          </form>
          

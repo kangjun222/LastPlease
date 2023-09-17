@@ -29,9 +29,9 @@
                        
                         </a>
                     </li>
-                    
+                   
                     <li>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"> Mypage</i></a>
+                        <a href="#"><i class="fa-solid fa-cart-shopping"> Belogin</i></a>
                     </li>
 
                 </ul>    
@@ -76,7 +76,7 @@
 
             </div> <!-- banner3 -->
         </div> <!-- banner3wrap -->
-	
+	<jsp:include page="/WEB-INF/views/common/footer.jsp" /> 
 
     </wrap>
 </body>

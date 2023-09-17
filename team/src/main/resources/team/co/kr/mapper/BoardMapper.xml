@@ -9,7 +9,7 @@
 					select bno, title, content, writer, writerDate, hit
 					from board
 					<include refid="search"/> <!--  검색을 읽어야됨 -->
-					order by bno
+					order by bno desc
 				)
 		)	
 		where rnum between #{startRow} and #{endRow}

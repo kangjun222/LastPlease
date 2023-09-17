@@ -23,7 +23,7 @@
 			where id = #{member.id}		
 	</update>
 
-	<select id="mybank" parameterType="hashMap" resultType="int">
+	<select id="mybank" parameterType="hashMap" resultType="Integer">
 		select bank-#{item.itemprice} from member where id=#{member.id}
 	</select>		
 </mapper>

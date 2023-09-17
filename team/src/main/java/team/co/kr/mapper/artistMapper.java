@@ -13,5 +13,4 @@ public interface artistMapper {
 	Artist profile(Artist art);
 	GroupArtist groupprofile(GroupArtist gr);
 	List<Item> gonewjins(String artist);
-	
 }

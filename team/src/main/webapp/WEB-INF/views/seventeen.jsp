@@ -65,6 +65,11 @@ color:#00bfa5;
 	position: relative;
 	
 }
+#shop{
+	position: relative;
+	left:160px;
+}
+
 </style>
 </head>
 <body>
@@ -73,7 +78,7 @@ color:#00bfa5;
         <header id="header">
             
            <div><a href="${root }"><img src="${root }resources/newjins/로고투명.png" alt="?"></a></div> 
-           <div><img src="${root }resources/newjins/shop.png" alt="?"></div> 
+           <div id="shop"><img src="${root }resources/newjins/shop.png" alt="?"></div> 
 
             
            <div>

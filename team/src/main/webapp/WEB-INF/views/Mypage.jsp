@@ -61,32 +61,56 @@
 </script>
 
 <style>
-*{
- margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   position: relative;
-  
+#wrap{
+	width: 1900px;
+	margin: 0 auto;
 }
-.panel-body{
-  position:absolute;
+body{
+	-ms-overflow-style: none;
+	overflow-x: hidden;
+}
+#header{
+	display: flex;
+	width: 1900px;
+	height: 200px;
+	margin: 0 auto;
+    justify-content: space-around;
+	
+}
 
- bottom:-430px;
-     left:0px;
-     
 
+#header div ul li{
+	display: inline;
+	padding-left: 20px;
+	
 }
-.logo{
-position:absolute;
-  margin-left: 500px;
-  bottom:50px;
+#header div ul{
+	padding-top: 80px;
 }
+
+.AUD{
+	font-size:70px;
+	color:black;
+	 width:400px;
+	position: relative;
+	top: 30px;
+	}
+
+#logo{
+		width: 200px;
+		height: 200px;
+}
+	
+
 #fontfont{
 	padding-left: 1800px;
 	font-size: 30px;
 	color:black;
-	
-	
+}
+
+#tablewrap{
+	width: 1900px;
+	margin: 0 auto;
 }
 
 </style>
@@ -94,34 +118,43 @@ position:absolute;
 </head>
 <body>
 	<div id="header">
-		<div id="logo">
-			<img src="${root}resources/img/logo.png" alt="로고이미지"  width="200px" height="200px"/>
-				 <img class="logo" id="mypagelogo" src="${root}resources/img/mypage.png" alt="마이페이지이미지"/>
-		</div>
-		<c:if test="${!empty mem}">
-			
-							<li>
-								<a href="${root}member/gojoin">
-									<div id="fontfont"><i class="fa-solid fa-user">${mem.id}님</i></div>
-								</a>
-							</li>
-							
-						</c:if>
-		
-		</div>
+            <div id="logo">
+                <img src="${root}resources/img/logo.png" alt="로고이미지"  width="200px"
+                    height="200px">
+            </div>
+            
+            <div>
+                <a href="#"><h1 class="AUD">MYPAGE</h1></a>   
+            </div>
+
+            <div id="headermenu">
+                <ul>               						
+                        <li>
+                            <a href="${root}member/logout" class="modaljun">
+                                <i class="fa-regular fa-user">Logout</i>
+                            </a>
+                        </li>
+        
+                        <li>
+                            <a href="${root}member/gojoin">
+                                <i class="fa-solid fa-user">${mem.id}님</i>
+                            </a>
+                        </li>                   
+                </ul>
+            </div>
+
+        </div>
 
 
-	<div class="panel panel-default">
-	
-	
-		<div class="panel-body">
+	<div id="tablewrap">			
+			<div>
 			<table class="table table-bordered" style="width: 1800px">
 				<thead>
 					<tr class="font">
-						<th width="45%">상품명</th>
-						<th width="30%">상품이미지</th>
-						<th width="10%">가격</th>	
-						<th width="15%">비고</th>										
+						<th width="45%" class="text-center">상품명</th>
+						<th width="30%" class="text-center">상품이미지</th>
+						<th width="10%" class="text-center">가격</th>	
+						<th width="15%" class="text-center">비고</th>										
 					</tr>
 				</thead>
 				
@@ -129,10 +162,10 @@ position:absolute;
 					<c:forEach items="${carts}" var="cart" varStatus="idx" >
 						<tr class="font">
 							<input type="hidden" id="itemname${idx.count}" value="${cart.itemname}"/>
-							<td width="50%" ><a href="">${cart.itemname}</a></td>
-							<td width="30%"><img src="${root}resources/upload/${cart.itemimg}" style="width: 60px"/></td>							
-							<td width="10%" id="itemprice">${cart.itemprice}</td>
-							<td width="10%">
+							<td width="50%" class="text-center"><a href="">${cart.itemname}</a></td>
+							<td width="30%" class="text-center"><img src="${root}resources/upload/${cart.itemimg}" style="width: 60px"/></td>							
+							<td width="10%" class="text-center" id="itemprice">${cart.itemprice}</td>
+							<td width="10%" class="text-center">
 								<form action="${root}item/gosellItem" method="post">
 									<button type="button" class="btn btn-warning" onclick="deletecart(${idx.count});">삭제</button>
 									
@@ -149,9 +182,48 @@ position:absolute;
 						</tr>
 						
 					</c:forEach>
-				</tbody>				
+				</tbody>						
 			</table>
-		</div>
+			</div>
+			
+			<br>
+			<br>
+			<br>
+			
+			<div>
+			<table class="table table-bordered" style="width: 1800px">
+				<thead>
+					<tr>
+						<th class="text-center"><h2>합격여부</h2></th>
+					</tr>
+				</thead>		
+				
+				<tbody>
+					<tr>
+						<td>
+							<div style="text-align: center;">
+								<c:if test="${empty myMember.pass}">
+								
+								</c:if>
+								
+								<c:if test="${!empty myMember.pass && myMember.pass eq '심사중'}">
+									<h3><b>심사중입니다 결과를 기다려 주세요.</b><h3>
+								</c:if>
+								
+								<c:if test="${!empty myMember.pass && myMember.pass eq '합격'}">
+									<h3><b>축하합니다. ${myMember.pass} 입니다.</b><h3>
+								</c:if>
+								
+								<c:if test="${!empty myMember.pass && myMember.pass eq '불합격'}">
+									<h3><b>다음에 다시 도전해주세요 ${myMember.pass} 입니다.</b></h3>
+								</c:if>
+							</div>		
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			
 	</div>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import team.co.kr.entity.Audition;
 import team.co.kr.entity.Cart;
 import team.co.kr.entity.Member;
 import team.co.kr.mapper.memberMapper;
@@ -60,6 +61,9 @@ public class memberService {
 	public Member pointCheck(Member member) {
 		return membermapper.pointCheck(member);
 	}
-
+	
+	public Audition mypass(Member member) {
+		return membermapper.mypass(member);
+	}
 }
 

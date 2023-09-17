@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import team.co.kr.entity.Audition;
 import team.co.kr.entity.Cart;
 import team.co.kr.entity.Member;
 
@@ -20,5 +21,5 @@ public interface memberMapper {
 	Member idSearch(Member member);
 	Member pwdSearch(Member member);
 	Member pointCheck(Member member);
-	
+	Audition mypass(Member member);
 }

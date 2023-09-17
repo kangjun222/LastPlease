@@ -4,7 +4,7 @@
 <mapper namespace="team.co.kr.mapper.auditionMapper">
 	<insert id="audition" parameterType="team.co.kr.entity.Audition">
 	insert into AUDITION
-	(JIWON,NAME,PONE,ADDRESS,EMAIL,HEELO,img1)
+	(JIWON,NAME,PONE,ADDRESS,EMAIL,HEELO,id,img1)
 	values(
 	#{JIWON,jdbcType=VARCHAR},
 	#{NAME,jdbcType=VARCHAR},
@@ -12,10 +12,22 @@
 	#{ADDRESS,jdbcType=VARCHAR},
 	#{EMAIL,jdbcType=VARCHAR},
 	#{HEELO,jdbcType=VARCHAR},
-	
+	#{id},
 	#{img1,jdbcType=VARCHAR}
 	
 	)
 
 	</insert>
+	
+	<select id="auditionlist" resultType="team.co.kr.entity.Audition">
+		select * from audition
+	</select>
+	
+	<select id="detailAudition" parameterType="team.co.kr.entity.Audition" resultType="team.co.kr.entity.Audition">
+		select * from audition where id=#{id}
+	</select>
+	
+	<update id="pass" parameterType="team.co.kr.entity.Audition">
+		update audition set pass = #{pass} where id = #{id}
+	</update>
 	</mapper>

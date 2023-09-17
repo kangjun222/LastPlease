@@ -7,12 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import team.co.kr.entity.Audition;
 import team.co.kr.entity.Cart;
 import team.co.kr.entity.Member;
 import team.co.kr.service.memberService;
@@ -130,10 +130,12 @@ public class MemberController {
 	}
 	
 	@GetMapping("/cartList")
-	public String cartList(Cart cart , Model model) {
+	public String cartList(Cart cart , Model model , Member member) {
 		List<Cart> carts = memberservice.cartList(cart);
+		Audition myMember = memberservice.mypass(member);
 		
 		model.addAttribute("carts", carts);
+		model.addAttribute("myMember", myMember);
 		
 		return "Mypage";
 	}

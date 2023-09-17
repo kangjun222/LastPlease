@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Audition {
+	private String id;
 	private String JIWON;
 	private String NAME;
 	private String PONE;
@@ -12,7 +13,7 @@ public class Audition {
 	private String HEELO;
 	private String img;
 	private String img1;
-	
+	private String pass;
 	
 	
 }

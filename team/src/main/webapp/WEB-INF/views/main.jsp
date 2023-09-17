@@ -129,10 +129,19 @@
 				<li>
 				<a href="javascript:Auditionmenu();"><h1><b>AUDITION</h1></b></a>
 				<div id="Auditionmenu">
-						<ul>
-							<li><a href="${root}maincontroller/guide">지원안내</a></li>
-							<li><a href="${root}maincontroller/guidedo">지원하기</a></li>
-						</ul>
+						<c:if test="${mem.id eq 'master'}">
+							<ul>
+								<li><a href="${root}audition/auditionlist">지원현황보기</a></li>
+							</ul>
+						</c:if>
+						
+						
+						<c:if test="${mem.id ne 'master'}">
+							<ul>
+								<li><a href="${root}maincontroller/guide">지원안내</a></li>
+								<li><a href="${root}maincontroller/guidedo">지원하기</a></li>
+							</ul>
+						</c:if>
 					</div></li>
 				<li><a href="${root}maincontroller/ceo"><h1><b>CEO</h1></b></a></li>
 			</ul>
