@@ -8,19 +8,20 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	
 	<!--   Root Context: defines shared resources visible to all other web components -->
-		
+ <!-- 		
  	   <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521/xe"/>											
 		<property name="username" value="c##himedia"/>
 		<property name="password" value="himedia"/>
-	</bean>      
- 	  <!--  <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+	</bean> 
+	 -->     
+ 	   <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.62:1521/xe"/>
 		<property name="username" value="C##TEAM"/>
 		<property name="password" value="TEAM"/>
-	</bean> -->
+	</bean> 
  
 <!-- HikariDataSource(Connection POOL을 만드는 역할을 한다) -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
